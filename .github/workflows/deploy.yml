@@ -27,6 +27,6 @@ jobs:
           php artisan config:clear &&
           php artisan cache:clear &&
           npm install &&
-          npm run build
+          npm run build 
         "
         
