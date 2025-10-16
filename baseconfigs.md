@@ -9,3 +9,6 @@ php artisan vendor:publish --tag=laravel-mail
 
 # HTML sanitization tags
 composer require mews/purifier
+
+# To push the current branch and set the remote as upstream, use
+git push --set-upstream gradestar main
