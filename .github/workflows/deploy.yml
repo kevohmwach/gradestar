@@ -20,7 +20,6 @@ jobs:
     - name: Deploy to server
       run: |
         ssh -p 1394 -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_SERVER_USER }}@${{ secrets.DEPLOY_SERVER_IP }} "
-          cd ${{ secrets.DEPLOY_SERVER_DIR }} &&
-          ls
+          cd ${{ secrets.DEPLOY_SERVER_DIR }}
         "
         
