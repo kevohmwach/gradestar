@@ -1,0 +1,456 @@
+*, body{
+    padding: 0px;
+    margin:0px ;
+    box-sizing: border-box;
+    font-size: 17px;
+}
+a {
+    text-decoration: none;
+    color: black;
+    cursor: ponter;
+}
+.link_tag {
+    text-decoration: none;
+    cursor: ponter;
+}
+
+li {
+    list-style: none;
+}
+button{
+    padding: 5px 30px;
+    background-color: rgb(16, 151, 16);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+button > a {
+    color: azure;
+}
+input, textarea{
+    padding: 10px 20px;
+    border: 1px solid green;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.pagination {
+    display: flex;
+}
+.pagination > li {
+    margin: 10px;
+}
+
+/* -----------------layout------------------ */
+.wrapper {
+    /* color: red; */
+}
+.navigation {
+    width: 100%;
+    /* border: 1px solid green; */
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    text-align: bottom;
+    background-color: green;
+    color: rgb(214, 233, 224);
+    /* padding: 10px; */
+}
+.logo{
+    display: flex;
+    align-items: baseline;
+}
+.logo > .logo-image {
+    padding: 10px;
+    width: 100%;
+}
+.logo_sizer > img{
+   border-radius: 50%; 
+}
+.logo_sizer{
+    height: 50px; 
+    width:50px;
+    /* border-radius: 50%;
+    background-color: azure; 
+    border:1px solid red; */
+}
+.site-title{
+    padding: 10px;
+    font-weight: bold;
+}
+.search_div{
+    display: flex;
+    /* padding: 10px; */
+    /* border: 1px solid green; */
+    /* height: 32px; */
+    margin-top: 20px;
+    border-radius: 5px;
+    /* background-color:  */
+    display: none;
+}
+.search_div > form{
+    width: 100%;
+}
+.search_div_mobile{
+    width: 100%;
+    margin: 0px;
+    display: block;
+}
+.search_fields{
+    display:flex;
+    height: 40px;
+    width: 100%;
+     /* border: 1px solid green; */
+}
+.search_fields > div{
+    /* display:flex; */
+}
+.nav-links > ul{
+    list-style: none;
+}
+.nav-links > ul > li{
+    display: inline-block;
+    padding: 10px;
+    padding-top: 20px;
+}
+.nav-links > ul > li > a {
+    text-decoration: none;
+    color: rgb(214, 233, 224);
+}
+.search_input {
+    padding: 10px 20px;
+    /* padding-left: 20px; */
+    width: 300px;
+    height: 100%;
+    border: none;
+    border-radius: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    
+}
+
+.search_input:focus {
+    border-radius: 0px;
+    border: 0px;
+    outline: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+
+}
+.search_input_mobile{
+    width: 100%;
+}
+.search_input_field_div{
+    width: 95%;
+}
+.search_button{
+    padding: 5px;
+    /* padding-right: 10px; */
+    width: 65px;
+    height: 100%;
+    border: 0px;
+    border-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+@media screen and (max-width: 900px){
+
+}
+/* ----------------footer------------------- */
+footer{
+    color: rgb(214, 233, 224);
+    background-color: green;
+    padding: 10px;
+    font-size: large;
+    /* line-height: 30px; */
+}
+footer a {
+    color: rgb(214, 233, 224);
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.copyright{
+    padding-top: 10px;
+    text-align: center;
+}
+.copyright, .footer{
+    width: 100%;
+    
+}
+.foot{
+    border-right: 1px solid grey;
+    width: 100%;
+    text-align: center;
+    /* padding-top: 30px; */
+}
+.footer-links{
+    border-left: 1px solid grey;
+}
+.footer-headings{
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .footer{
+        flex-direction: row;
+    }
+    .foot{
+        width: 50%;
+    }
+    .footer-headings{
+        text-decoration: none;
+    }
+    .contact {
+        border: none;
+        /* padding-top: 50px; */
+    }
+}
+@media screen and (min-width: 900px) {
+    .footer{
+        flex-direction: row;
+    }
+    .foot{
+        width: 33.3%;
+    }
+    .footer-headings{
+        text-decoration: none;
+    }
+    .search_div{
+        display: block;
+    }
+    .search_div_mobile{
+        display: none;
+    }
+    
+}
+
+
+/* -----------------------------index---------------------------- */
+.containerr {
+    background-color: rgb(228, 222, 222);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-height: 100vh;
+}
+.main-content {
+    width: 100%;
+    /* border: 1px solid white; */
+    border-radius: 5px;
+    padding-right: 10px;
+}
+.promotion-content {
+    /* border-left: 1px solid rgb(157, 201, 175); */
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    /* margin-left: 5px; */
+    /* height: 50px; */
+}
+.index-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.column {
+    /* border: 1px solid red; */
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    
+}
+.column > a {
+    text-decoration: none;
+}
+.promotion-column {
+    padding-bottom: 30px;
+}
+.promotion-column > a {
+    text-decoration: none;
+}
+.hot-deals{
+    color:rgb(238, 96, 96);
+    font-style: italic;
+    font-weight: bold;
+}
+.bk-image, .bk-title, .bk-tags, .bk-price {
+    /* padding-bottom: 5px; */
+    text-align: center;
+}
+.bk-title{
+    padding-top: 5px;
+}
+.bk-cart {
+    text-align: center;
+}
+.bk-cart > button > a {
+    text-decoration: none;
+}
+.bk-title {
+    font-size: 17px;
+}
+.discounted-price, .actual-price {
+    font-weight: bold;
+    color: rgb(238, 137, 137);
+    display: inline-block;
+}
+.actual-price-discounted{
+    font-weight: normal;
+    color: rgb(201, 119, 119);
+}
+.non-discount {
+    /* display: inline; */
+}
+.discount {
+    /* display: none; */
+}
+
+.bk-image > img {
+    width: 100%;
+    height: 150px;
+}
+.prod_course_shop{
+    text-align: center;
+    padding: 10px 0px;
+}
+
+/* .bk-image-promo > img {
+    width: 100%;
+    height: 200px;
+} */
+/* Tablet */
+@media screen and (min-width: 560px) and (max-width: 900px){
+    .main-content {
+        width: 100%;
+        padding: none;
+        padding-bottom: 10px;
+    }
+    .promotion-content {
+        border-top: 1px solid blue;
+        width: 100%;
+    }
+    .containerr {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .index-row {
+        flex-direction: row;
+    }
+    .column {
+        /* border: 1px solid red; */
+        width: 50%;
+    }
+
+}
+/* Larger Tablets */
+@media screen and (min-width: 900px)and (max-width: 1200px){
+    .main-content {
+        width: 80%;
+        padding: none;
+        padding-bottom: 10px;
+    }
+    .promotion-content {
+        border-top: 1px solid blue;
+        width: 20%;
+    }
+    .containerr {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .index-row {
+        flex-direction: row;
+    }
+    .column {
+        /* border: 1px solid red; */
+        width: 33.3%;
+    }
+
+}
+/* Laptop & Desktops */
+@media screen and (min-width: 1200px){
+    .main-content {
+        width: 80%;
+    }
+    .promotion-content {
+        /* border: 1px solid blue; */
+        width: 20%;
+    }
+    .containerr {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .index-row {
+        flex-direction: row;
+    }
+    .column {
+        /* border: 1px solid red; */
+        width: 25%;
+    }
+
+}
+
+/* -------------------------------About--------------------------*/
+.about-h1{
+    font-size: 30px;
+}
+.about-h2{
+    font-size: 20px;
+    padding-top: 50px;
+}
+
+/* -----------------------Search--------------------- */
+.search-wrap{
+    background-color: white;
+}
+.searchmessage{
+    padding-left: 10px;
+    padding-top: 10px;
+    /* text-align: center; */
+}
+.searchTerm{
+    color:rgb(138, 230, 138);
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*-----------------------SEO----------------------------*/
+.seo_h1{
+    font-size: 30px;
+}
+.seo_h2{
+    font-size: 18px;
+    font-weight: normal;
+
+}
+.seo-optimizer{
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 90%;
+    text-align: left;
+}
+.optimizer-heading > h2{
+    font-size: 18px;
+}
+.optimizer-text{
+    padding-top: 5px;
+    padding-bottom: 50px;
+}
+
+
+

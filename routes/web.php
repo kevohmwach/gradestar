@@ -1,0 +1,65 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\BillingController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\FileController;
+use App\Http\Controllers\MailsendController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homeprofile');
+//Temporal route
+// Route::get('/home', [App\Http\Controllers\ShopController::class, 'index'])->name('home');
+
+Route::get('/', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
+Route::get('/shop/{product}', [App\Http\Controllers\ShopController::class, 'show']);
+Route::get('/preview/{product}', [App\Http\Controllers\ShopController::class, 'preview']);
+Route::get('/addcart/{id}', [App\Http\Controllers\ShopController::class, 'addcart']);
+Route::get('/removecart/{id}', [App\Http\Controllers\ShopController::class, 'removecart']);
+Route::get('/cart', [App\Http\Controllers\ShopController::class, 'cart'])->name('cart');
+Route::get('/about', [App\Http\Controllers\ShopController::class, 'about'])->name('about');
+Route::get('products/search', [App\Http\Controllers\ShopController::class, 'search'])->name('Booksearch');
+Route::get('/search/{book}', [App\Http\Controllers\ShopController::class, 'search'])->name('search');
+
+
+
+//Route::get('/products', 'ProductController@create')->name('createproduct');
+Route::get('/product/create', [App\Http\Controllers\ProductController::class, 'create'])->name('product_create');
+Route::post('/product/store', [App\Http\Controllers\ProductController::class, 'store']);
+Route::get('/product/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('productEdit');
+Route::patch('/product/update/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('productUpdate');
+
+Route::get('/checkout', [App\Http\Controllers\BillingController::class, 'checkout']);
+Route::post('/billing/store', [App\Http\Controllers\BillingController::class, 'store']);
+Route::get('/billing/retryPayment', [App\Http\Controllers\BillingController::class, 'retryPayment']);
+
+Route::post('/payment/gateway', [PaymentController::class, 'paymentgateway'])->name('gateway');
+Route::get('/payment/success', [PaymentController::class, 'success'])->name('success');
+Route::get('/payment/fail', [PaymentController::class, 'fail'])->name('fail');
+Route::get('/payment/status', [PaymentController::class, 'status'])->name('status');
+
+Route::get('/file/download/{orderRef}/{id}/{slug}', [FileController::class, 'download'])->name('download');
+Route::get('/sendmail/newpurchase',[MailsendController::class,'newpurchase'])->name('mail_newpurchase');
+
+Route::get('/transactions', [App\Http\Controllers\BillingController::class, 'transactions'])->name('transactions');
+Route::get('/billing', [App\Http\Controllers\BillingController::class, 'index'])->name('billing');
+Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
+
+
