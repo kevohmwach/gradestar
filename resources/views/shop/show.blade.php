@@ -1,22 +1,23 @@
 @extends('layouts.site')
 
-@section('title') 
-    @isset($data['prod_meta_title'])
-        {{ $data['prod_meta_title']}} 
-    @else
-        $data{{['prod_title']}} 
-    @endisset
+@section('title') {{$data['prod_title']}} @endsection
+
+@section('meta_title') 
+     {{$data['prod_meta_title']}}
+    @empty($data['prod_meta_title'])
+        {{$data['prod_title']}}
+    @endempty
 @endsection
-{{-- @section('title') {{$keywords[0]}} @endsection --}}
+@section('meta_description')
+    {{$data['prod_meta_description']}}
+    @empty($data['prod_meta_description'])
+        {{$data['prod_description']}}
+    @endempty
+@endsection
+
 @section('canonical_url') {{$canonical_url}} @endsection
 @section('keywords') {{$data['prod_keywords']}} @endsection
-@section('description')
-    @isset($data['prod_meta_description'])
-        {{ $data['prod_meta_description']}} 
-    @else
-        {{$data['prod_description']}}
-    @endisset
-@endsection
+
 
 
 @section('content')

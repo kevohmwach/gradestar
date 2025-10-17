@@ -1,6 +1,8 @@
 @extends('layouts.site')
 
 @section('title') {{'Gradestar - About'}} @endsection
+@section('meta_title') {{'Gradestar - About'}} @endsection
+@section('meta_description') {{'Gradestar - Complete Test banks'}} @endsection
 @section('canonical_url') {{$canonical_url}} @endsection
 
 @section('content')

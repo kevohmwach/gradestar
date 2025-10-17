@@ -1,9 +1,20 @@
 User-agent: *
+
 Disallow: */preview*
 Disallow: */cart*
+Disallow: */addcart*
 Disallow: */checkout*
 Disallow: */payment*
 Disallow: */file*
 Disallow: */users*
 Disallow: */transactions*
 Disallow: */product*
+Disallow: /*preview*
+Disallow: /cdn*
+Disallow: /park*
+Disallow: /caf*
+Disallow: /search*
+Disallow: /password*
+Disallow: /register*
+Disallow: /login*
+Sitemap: https://www.gradestarsolutions.com/sitemap.xml

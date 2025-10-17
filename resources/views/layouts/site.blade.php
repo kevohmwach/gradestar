@@ -14,8 +14,10 @@
     
     <title> @yield('title') </title>
     <link href="@yield('canonical_url')" rel="canonical">
+    <meta name="title" content="@yield('meta_title')">
+    <meta name="description" content="@yield('meta_description')">
     <meta name="keywords" content="@yield('keywords')">
-    <meta name="description" content="@yield('description')">
+    
 
     {{-- <title>{{ config('app.name', 'Gradestar') }} - @yield('title')</title> --}}
 

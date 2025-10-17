@@ -1,8 +1,9 @@
 @extends('layouts.site')
 @section('title') {{'Gradestar - Test banks'}} @endsection
+@section('meta_title') {{'Gradestar - Test banks'}} @endsection
+@section('meta_description') Complete Test Banks with Questions and Answers to help in your exam preparation @endsection
 @section('canonical_url') {{$canonical_url}} @endsection
 @section('keywords') Test banks @endsection
-@section('description') Complete Test Banks with Questions and Answers to help in your exam preparation @endsection
 
 @section('content')
 <div class="containerr">

@@ -3,9 +3,10 @@
 @section('content')
 
 @section('title') Search - Gradestar @endsection
-{{-- @section('canonical_url') {{$canonical_url}} @endsection --}}
+@section('meta_title') Search - Gradestar @endsection
+@section('meta_description') Complete Test banks" Questions and answers @endsection
 @section('keywords') Complete Test banks" Questions and answers @endsection
-@section('description') Complete Test banks" Questions and answers @endsection
+
 <div class="containerr">
     <div class="main-content">
 
