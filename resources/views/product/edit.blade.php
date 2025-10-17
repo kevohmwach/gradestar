@@ -9,7 +9,7 @@
             @method('PATCH')
             
             <div>
-                <label  class="label">Title</label>
+                <label  class="label">Title/Url</label>
 
                 <input id="prod_title" type="text"  class="form-control @error('prod_title') is-invalid @enderror" name="prod_title" value="{{ old('prod_title',$product->prod_title) }}" required autocomplete="prod_title" autofocus>
                 @error('prod_title')

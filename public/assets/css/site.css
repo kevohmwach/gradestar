@@ -446,10 +446,17 @@ footer a {
 }
 .optimizer-heading > h2{
     font-size: 18px;
+    
 }
 .optimizer-text{
     padding-top: 5px;
     padding-bottom: 50px;
+}
+.optimizer-text > ul > li{
+    list-style:square;
+}
+.optimizer-text > ol > li{
+    list-style:decimal
 }
 
 
