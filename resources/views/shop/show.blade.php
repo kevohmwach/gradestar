@@ -51,7 +51,7 @@
                 <div class="prod_description">
                     <h2 class="seo_h2">{{$data->prod_description}} course</h2>
                 </div>
-                {{-- <div>
+                <div>
                     
                     <ul class="other_titles">
                         <li class="text-primary">Other Titles</li>
@@ -59,7 +59,7 @@
                             <li class="text-secondary"><strong> {{$keyword}},</strong></li>
                         @endforeach
                     </ul>
-                </div> --}}
+                </div>
                 <div class="prod_category">
                     <h2 class="seo_h2">{{$data->prod_category}}</h2>
                 </div>
