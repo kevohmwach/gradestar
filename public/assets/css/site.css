@@ -458,6 +458,9 @@ footer a {
 .optimizer-text > ol > li{
     list-style:decimal
 }
+.optimizer-text > ol > li::marker {
+  font-weight: bold;
+}
 
 
 
