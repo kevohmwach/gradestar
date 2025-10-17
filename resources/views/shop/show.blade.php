@@ -53,7 +53,7 @@
                 </div>
                 <div>
                     
-                    <ul class="other_titles">
+                    <ul class="Similar_search names">
                         <li class="text-primary">Other Titles</li>
                         @foreach($keywords as $keyword)
                             <li class="text-secondary"><strong> {{$keyword}},</strong></li>
