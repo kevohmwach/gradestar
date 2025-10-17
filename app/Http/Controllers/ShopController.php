@@ -81,6 +81,7 @@ class ShopController extends Controller
             $file_path = storage_path('app/public'.$data['prod_file']);
             $no_pages = $this->getNumPagesPdf($file_path);
             $canonical_url = url()->current();
+            $keywords = array_shift(explode( ",", $data['prod_keywords']));
              
             
             if($no_pages>0 && is_numeric($no_pages) ){
@@ -92,7 +93,8 @@ class ShopController extends Controller
                     'promotions' => $promotion,
                     'pages' => 'Pages '.$no_pages,
                     'canonical_url' => $canonical_url,
-                    'keywords' => explode( ",", $data['prod_keywords']),
+                    //'keywords' => explode( ",", $data['prod_keywords']),
+                    'keywords' => $keywords,
               
                     
                 ]);
