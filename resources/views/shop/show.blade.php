@@ -47,9 +47,9 @@
                 <div class="prod_title">
                     <h1 class="seo_h1">{{$data->prod_title}}</h1>
                 </div>
-                {{-- <div class="prod_description">
+                <div class="prod_description">
                     <h2 class="seo_h2">{{$data->prod_description}} course</h2>
-                </div> --}}
+                </div>
                 <div>
                     
                     <ul class="other_titles">
