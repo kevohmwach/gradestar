@@ -32,6 +32,15 @@
                     <html lang="en">
                 </iframe>
 
+                <div class="bk-cart">
+                    <br>
+                    <button>
+                        <a href="/addcart/{{$data->id}}">
+                            Add to cart
+                        </a> 
+                    </button>
+                </div>
+
                 
             </div>
             <div class="product_info">
@@ -43,6 +52,7 @@
                     {{-- <h2 class="seo_h2">{{$data->prod_description}} course</h2> --}}
                     <h2 class="seo_h2">{!! htmlspecialchars_decode($data->prod_description) !!}</h2>
                 </div>
+                
                 <div>
                     
                     <ul class="other_titles">
@@ -74,13 +84,13 @@
                 <div class="prod_more">
                     <p> {{$pages}} </p>
                 </div>
-                <div class="bk-cart">
+                {{-- <div class="bk-cart">
                     <button>
                         <a href="/addcart/{{$data->id}}">
                             Add to cart
                         </a> 
                     </button>
-                </div>
+                </div> --}}
             </div>
 
         </div>
