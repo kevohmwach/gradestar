@@ -45,6 +45,50 @@
 
     <link href="{{ asset('assets/css/site.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/product.css') }}" rel="stylesheet">
+
+    {{-- <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Professional Nursing Concepts & Challenges 9th Edition Test Bank",
+  "image": "https://www.gradestarsolutions.com/wp-content/uploads/2025/10/professional-nursing-concepts-challenges-9th-edition-test-bank.jpg",
+  "description": "Download the Professional Nursing Concepts & Challenges 9th Edition Test Bank by Beth Perry Black. Includes verified questions, correct answers, and instant PDF access for nursing exam preparation.",
+  "sku": "PNCC9E-TB",
+  "brand": {
+    "@type": "Organization",
+    "name": "Gradestar Solutions"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Beth Perry Black"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.gradestarsolutions.com/shop/professional-nursing-concepts-challenges-9th-edition-test-bank",
+    "priceCurrency": "USD",
+    "price": "17.99",
+    "priceValidUntil": "2025-12-31",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock",
+    "deliveryLeadTime": "PT0H",
+    "hasDigitalDocumentPermission": {
+      "@type": "DigitalDocumentPermission",
+      "permissionType": "https://schema.org/ReadPermission"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "126"
+  },
+  "isAccessoryOrSparePartFor": {
+    "@type": "Book",
+    "name": "Professional Nursing: Concepts & Challenges (9th Edition)",
+    "author": "Beth Perry Black"
+  }
+}
+</script> --}}
+
     
     
 </head>
