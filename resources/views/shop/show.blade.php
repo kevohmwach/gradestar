@@ -5,8 +5,8 @@
 @section('meta_title'){{$data['prod_meta_title']}}@empty($data['prod_meta_title']){{$data['prod_title']}}@endempty @endsection
 @section('meta_description'){{$data['prod_meta_description']}}@empty($data['prod_meta_description']){{$data['prod_description']}}@endempty @endsection
 
-@section('canonical_url') {{$canonical_url}} @endsection
-@section('keywords') {{$data['prod_keywords']}} @endsection
+@section('canonical_url'){{$canonical_url}} @endsection
+@section('keywords'){{$data['prod_keywords']}} @endsection
 @section('image_url')storage/{{$data->prod_image}}  @endsection
 
 
