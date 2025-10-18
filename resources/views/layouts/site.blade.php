@@ -17,6 +17,19 @@
     <meta name="title" content="@yield('meta_title')">
     <meta name="description" content="@yield('meta_description')">
     <meta name="keywords" content="@yield('keywords')">
+
+    <meta property="og:title" content="@yield('meta_title')">
+    <meta property="og:description" content="@yield('meta_description')">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="@yield('canonical_url')">
+    <meta property="og:site_name" content="GradeStar Solutions">
+    <meta property="og:image" content="@yield('image_url')">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('meta_title')">
+    <meta name="twitter:description" content="@yield('meta_description')">
+    <meta name="twitter:image" content="@yield('image_url')">
+
     
 
     {{-- <title>{{ config('app.name', 'Gradestar') }} - @yield('title')</title> --}}

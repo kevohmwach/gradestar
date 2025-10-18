@@ -1,10 +1,10 @@
 @extends('layouts.site')
-@section('title') {{'Gradestar - Test banks'}} @endsection
-@section('meta_title') {{'Gradestar - Test banks'}} @endsection
-@section('meta_description') Complete Test Banks with Questions and Answers to help in your exam preparation @endsection
+@section('title') {{'Nursing Test Banks – Verified & Instant Download | GradeStar Solutions'}} @endsection
+@section('meta_title') {{'Nursing Test Banks – Verified & Instant Download | GradeStar Solutions'}} @endsection
+@section('meta_description') Explore verified nursing test banks with instant PDF downloads. Trusted by nursing students and educators worldwide. @endsection
 @section('canonical_url') {{$canonical_url}} @endsection
-@section('keywords') Test banks @endsection
-
+@section('keywords') nursing test banks PDF, nursing exam questions, buy nursing test banks online, nursing test bank with answers, nursing study materials, nursing textbook test banks @endsection
+{{-- @section('img_url')  @endsection --}}
 @section('content')
 <div class="containerr">
     <div class="main-content">
