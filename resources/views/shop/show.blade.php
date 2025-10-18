@@ -62,12 +62,12 @@
                         @endforeach
                     </ul>
                 </div>
-                <div class="prod_category">
+                {{-- <div class="prod_category">
                     <h2 class="seo_h2">{{$data->prod_category}}</h2>
                 </div>
                 <div class="prod_course">
                     <h2 class="seo_h2" >Written for {{$data->prod_course}} course</h2>
-                </div>
+                </div> --}}
                     @if ($data->prod_Percent_discount > 0)
                         <div class="discount">
                             <p class="actual-price actual-price-discounted"><s>${{round($data->prod_actualPrice,2)}}</s></p>
