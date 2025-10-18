@@ -11,6 +11,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+              repository: your-org/your-private-repo
+              token: ${{ secrets.MY_PAT }} # Use the stored PAT secret
 
     - name: Setup SSH
       uses: webfactory/ssh-agent@v0.8.0
