@@ -94,8 +94,8 @@ class ShopController extends Controller
                     'promotions' => $promotion,
                     'pages' => 'Pages '.$no_pages,
                     'canonical_url' => $canonical_url,
-                    //'keywords' => explode( ",", $data['prod_keywords']),
-                    'keywords' => $keywords,
+                    'keywords' => explode( ",", $data['prod_keywords']),
+                    //'keywords' => $keywords,
               
                     
                 ]);
