@@ -11,9 +11,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        # repository: kevohmwach/gradestar
-        token: ${{ secrets.MY_PAT }} # Use the stored PAT secret
 
     - name: Setup SSH
       uses: webfactory/ssh-agent@v0.8.0
@@ -24,6 +21,7 @@ jobs:
       run: |
         ssh -p 1394 -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_SERVER_USER }}@${{ secrets.DEPLOY_SERVER_IP }} "
           cd ${{ secrets.DEPLOY_SERVER_DIR }} &&
+          git remote set-url origin https://kevohmwach:${{ secrets.MY_PAT }}@github.com/kevohmwach/gradestar.git
           git pull origin main &&
           composer install --no-interaction &&
           composer require mews/purifier &&
@@ -32,6 +30,4 @@ jobs:
           npm install &&
           npm run build
         "
-      env:
-        GH_TOKEN: ${{ secrets.MY_PAT }}
         
