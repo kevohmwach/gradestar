@@ -62,12 +62,12 @@
                         @endforeach
                     </ul>
                 </div>
-                {{-- <div class="prod_category">
+                <div class="prod_category">
                     <h2 class="seo_h2">{{$data->prod_category}}</h2>
-                </div> --}}
+                </div>
                 <div class="prod_course">
-                    {{-- <h2 class="seo_h2" >Written for {{$data->prod_course}} </h2> --}}
-                    <p>Written for <strong> {{$data->prod_course}}.</strong> </p>
+                    <h2 class="seo_h2" >Written for {{$data->prod_course}} </h2>
+                    {{-- <p>Written for <strong> {{$data->prod_course}}.</strong> </p> --}}
                 </div>
                     @if ($data->prod_Percent_discount > 0)
                         <div class="discount">
