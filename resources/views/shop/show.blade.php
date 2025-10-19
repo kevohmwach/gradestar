@@ -97,8 +97,11 @@
         </div>
         <div class="preview_alert">
             <div>
-                <p class="seo_h2" >You are viewing a  preview pdf for <strong>{{$data['prod_title']}}</strong>.
-                <span class="instant_downlink_link" >An instant downlink link</span> to the <strong> complete test bank</strong> will be sent via email immediately after purchase.</p>
+                {{-- <p>You are viewing a  preview pdf for <strong>{{$data['prod_title']}}</strong>.
+                <span class="instant_downlink_link" >An instant downlink link</span> to the <strong> complete test bank</strong> will be sent via email immediately after purchase.</p> --}}
+            
+                <h2 class="seo_h2" >You are viewing a  preview pdf for {{$data['prod_title']}}.
+                <span class="instant_downlink_link" >An instant downlink link</span> to the complete test bank will be sent via email immediately after purchase.</h2>
             </div>
                     
 
