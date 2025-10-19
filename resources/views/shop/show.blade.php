@@ -34,6 +34,16 @@
 
                 <div class="bk-cart">
                     <br>
+                        @if ($data->prod_Percent_discount > 0)
+                            <div class="discount">
+                                <p class="actual-price actual-price-discounted"><s>${{round($data->prod_actualPrice,2)}}</s></p>
+                                <p class="discounted-price">${{round($data->prod_actualPrice* (1-($data->prod_Percent_discount*0.01)),2) }}</p>
+                            </div>
+                        @else
+                            <div class="non-discount">
+                                <p class="actual-price">${{$data->prod_actualPrice}}</p>
+                            </div>
+                        @endif
                     <button>
                         <a href="/addcart/{{$data->id}}">
                             Add to cart
@@ -62,14 +72,14 @@
                         @endforeach
                     </ul>
                 </div>
-                <div class="prod_category">
+                {{-- <div class="prod_category">
                     <h2 class="seo_h2">{{$data->prod_category}}</h2>
-                </div>
+                </div> --}}
                 <div class="prod_course">
-                    <h2 class="seo_h2" >Written for {{$data->prod_course}} </h2>
-                    {{-- <p>Written for <strong> {{$data->prod_course}}.</strong> </p> --}}
+                    {{-- <h2 class="seo_h2" >Written for {{$data->prod_course}} </h2> --}}
+                    <p>Written for <strong> {{$data->prod_course}}.</strong> </p>
                 </div>
-                    @if ($data->prod_Percent_discount > 0)
+                    {{-- @if ($data->prod_Percent_discount > 0)
                         <div class="discount">
                             <p class="actual-price actual-price-discounted"><s>${{round($data->prod_actualPrice,2)}}</s></p>
                             <p class="discounted-price">${{round($data->prod_actualPrice* (1-($data->prod_Percent_discount*0.01)),2) }}</p>
@@ -78,12 +88,12 @@
                         <div class="non-discount">
                             <p class="actual-price">${{$data->prod_actualPrice}}</p>
                         </div>
-                    @endif
+                    @endif --}}
                 {{-- <div class="prod_price">
                     <p>Price: ${{$data->prod_actualPrice}}</p>
                 </div> --}}
                 <div class="prod_more">
-                    <p> {{$pages}} </p>
+                    <p class="text-info">{{$pages}}</p>
                 </div>
                 {{-- <div class="bk-cart">
                     <button>
@@ -97,11 +107,8 @@
         </div>
         <div class="preview_alert">
             <div>
-                {{-- <p>You are viewing a  preview pdf for <strong>{{$data['prod_title']}}</strong>.
-                <span class="instant_downlink_link" >An instant downlink link</span> to the <strong> complete test bank</strong> will be sent via email immediately after purchase.</p> --}}
-            
-                <h2 class="seo_h2" >You are viewing a  preview pdf for {{$data['prod_title']}}.
-                <span class="instant_downlink_link" >An instant downlink link</span> to the complete test bank will be sent via email immediately after purchase.</h2>
+                <p class="seo_h2" >You are viewing a  preview pdf for <strong>{{$data['prod_title']}}</strong>.
+                <span class="instant_downlink_link" >An instant downlink link</span> to the <strong> complete test bank</strong> will be sent via email immediately after purchase.</p>
             </div>
                     
 
