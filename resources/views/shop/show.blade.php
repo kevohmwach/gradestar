@@ -60,7 +60,8 @@
                 </div>
                 <div class="prod_description">
                     {{-- <h2 class="seo_h2">{{$data->prod_description}} course</h2> --}}
-                    <h2 class="seo_h2">{!! htmlspecialchars_decode($data->prod_description) !!}</h2>
+                    {{-- <h2 class="seo_h2">{!! htmlspecialchars_decode($data->prod_description) !!}</h2> --}}
+                    <div >{!! htmlspecialchars_decode($data->prod_description) !!}</div>
                 </div>
                 
                 <div>
