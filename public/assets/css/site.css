@@ -465,6 +465,9 @@ footer a {
     font-weight: normal;
     font-size: 17px;
 }
+.optimizer-text > ul > li > a, .optimizer-text > ol > li > a, .optimizer-text > a{
+    color: blue;
+}
 
 
 
