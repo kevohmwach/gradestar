@@ -468,6 +468,10 @@ footer a {
 .optimizer-text > ul > li > a, .optimizer-text > ol > li > a, .optimizer-text > a{
     color: blue;
 }
+.prod_description > div > h2{
+    font-weight: normal;
+    font-size: 18px;
+}
 
 
 
