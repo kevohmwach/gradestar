@@ -66,11 +66,13 @@
                 
                 <div>
                     
+                    {{-- <p class="text-secondary"><strong> {{$keywords[0]}},</strong></p> --}}
                     <ul class="other_titles">
                         <li class="text-primary">Other similar search names</li>
-                        @foreach($keywords as $keyword)
+                            <li class="text-secondary"><strong> {{$keywords[0]}},</strong></li>
+                        {{-- @foreach($keywords as $keyword)
                             <li class="text-secondary"><strong> {{$keyword}},</strong></li>
-                        @endforeach
+                        @endforeach --}}
                     </ul>
                 </div>
                 {{-- <div class="prod_category">
