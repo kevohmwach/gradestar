@@ -78,10 +78,10 @@
                 {{-- <div class="prod_category">
                     <h2 class="seo_h2">{{$data->prod_category}}</h2>
                 </div> --}}
-                <div class="prod_course">
-                    {{-- <h2 class="seo_h2" >Written for {{$data->prod_course}} </h2> --}}
+                {{-- <div class="prod_course">
+                    <h2 class="seo_h2" >Written for {{$data->prod_course}} </h2>
                     <p>Written for <strong> {{$data->prod_course}}.</strong> </p>
-                </div>
+                </div> --}}
                     {{-- @if ($data->prod_Percent_discount > 0)
                         <div class="discount">
                             <p class="actual-price actual-price-discounted"><s>${{round($data->prod_actualPrice,2)}}</s></p>
