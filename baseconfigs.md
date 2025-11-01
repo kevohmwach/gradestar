@@ -12,3 +12,6 @@ composer require mews/purifier
 
 # To push the current branch and set the remote as upstream, use
 git push --set-upstream gradestar main
+
+# Schema data package
+composer require spatie/laravel-schema-org

@@ -38,13 +38,22 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <!-- Scripts -->
-     @vite(['resources/js/app.js'])
-     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link href="{{ asset('assets/css/site.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/product.css') }}" rel="stylesheet">
+    <!-- Scripts -->
+    @vite([
+
+        'resources/js/app.js',
+        'resources/css/site.css',
+        'resources/css/product.css',
+
+        ])
+    
+
+    {{-- <link href="{{ asset('assets/css/site.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/product.css') }}" rel="stylesheet"> --}}
+
+
 
     {{-- <script type="application/ld+json">
 {

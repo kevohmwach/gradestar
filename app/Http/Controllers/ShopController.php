@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Spatie\SchemaOrg\Schema;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -69,6 +70,8 @@ class ShopController extends Controller
         $promotion = Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray();
 
         $product = $this->checkInput($product);
+       
+        
 
         if (filter_var($product, FILTER_SANITIZE_STRING)!== false) {
             $data = Product::where('slug', $product)->first();
@@ -76,6 +79,39 @@ class ShopController extends Controller
             $extra_info = explode( "<br>", $extra_info);
 
             $data['prod_overview1_descriprion'] = clean($data['prod_overview1_descriprion']);
+
+            $product_price = $data['prod_actualPrice'];
+            if( $data['prod_Percent_discount'] ){
+                $product_price = round($data->prod_actualPrice* (1-($data->prod_Percent_discount*0.01)),2);
+            }
+            
+            //Generate Schema.org data
+            $schema = Schema::product()
+            ->name($data['prod_title'])
+            ->image(asset($data['prod_image']))
+            // ->sku($product->sku)
+            ->description($data['prod_meta_description'])
+            ->brand(
+                Schema::brand()->name("GradeStar Solutions")
+            )
+            ->offers(
+                Schema::offer()
+                    ->url(url()->current())
+                    ->priceCurrency('USD')
+                    ->price($product_price)
+                    ->availability('https://schema.org/InStock')
+                    // ->itemCondition('https://schema.org/NewCondition')
+            );
+
+            // if ($product->average_rating) {
+            //     $schema->aggregateRating(
+            //         Schema::aggregateRating()
+            //             ->ratingValue($product->average_rating)
+            //             ->reviewCount($product->review_count)
+            //     );
+            // }
+
+            
 
 
             $file_path = storage_path('app/public'.$data['prod_file']);
@@ -96,6 +132,7 @@ class ShopController extends Controller
                     'canonical_url' => $canonical_url,
                     'keywords' => explode( ",", $data['prod_keywords']),
                     //'keywords' => $keywords,
+                    'schema' => $schema,
               
                     
                 ]);
@@ -108,6 +145,7 @@ class ShopController extends Controller
                     'pages' => '',
                     'canonical_url' => $canonical_url,
                     'keywords' => explode( ",", $data['prod_keywords']),
+                    'schema' => $schema,
                 ]);
 
             }

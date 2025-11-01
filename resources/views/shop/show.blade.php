@@ -259,5 +259,8 @@
 
     </div>
 </div>
+@isset($schema)
+    {!! $schema->toScript() !!}
+@endisset
 
 @endsection

@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.6",
         "mews/purifier": "^3.4",
+        "spatie/schema-org": "^3.23",
         "srmklive/paypal": "~3.0"
     },
     "require-dev": {
