@@ -24,7 +24,7 @@ jobs:
           git remote set-url origin https://kevohmwach:${{ secrets.MY_PAT }}@github.com/kevohmwach/gradestar.git
           git pull origin main &&
           composer install --optimize-autoloader --no-dev --no-interaction &&
-          php artisan optimize:clear
+          php artisan optimize:clear &&
           npm install &&
           npm run build &&
           php artisan optimize &&
