@@ -64,17 +64,17 @@
                     <div >{!! htmlspecialchars_decode($data->prod_description) !!}</div>
                 </div>
                 
-                {{-- <div> --}}
+                <div>
                     
                     {{-- <p class="text-secondary"><strong> {{$keywords[0]}},</strong></p> --}}
-                    {{-- <ul class="other_titles">
-                        <li class="text-primary">Other similar search names</li>
+                    <ul class="other_titles">
+                        {{-- <li class="text-primary">Other similar search names</li>
                             <li class="text-secondary"><strong> {{$keywords[0]}},</strong></li> --}}
                         {{-- @foreach($keywords as $keyword)
                             <li class="text-secondary"><strong> {{$keyword}},</strong></li>
                         @endforeach --}}
-                    {{-- </ul> --}}
-                {{-- </div> --}}
+                    </ul>
+                </div>
                 {{-- <div class="prod_category">
                     <h2 class="seo_h2">{{$data->prod_category}}</h2>
                 </div> --}}
