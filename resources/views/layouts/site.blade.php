@@ -282,7 +282,7 @@
                         @if(Auth::user()->priveledge > 2 )
                             <li><a class="link_tag" href={{route('billing')}}>Billing</a></li>
                             <li><a class="link_tag" href={{route('transactions')}}>Transactions</a></li>
-                            <li><a class="link_tag" href={{route('users')}}>Users</a></li>
+                            {{-- <li><a class="link_tag" href={{route('users')}}>Users</a></li> --}}
                         @endif
                     </ul>
                 </div>
