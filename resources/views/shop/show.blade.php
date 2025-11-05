@@ -96,6 +96,9 @@
                     <p>Price: ${{$data->prod_actualPrice}}</p>
                 </div> --}}
                 <div class="prod_more">
+                    <div class="seo_image">
+                        <img src="../storage/{{$data->prod_image}}"  alt="{{$data->prod_title}}" width="100px" height="100px">
+                    </div>
                     <p class="text-info">{{$pages}}</p>
                 </div>
                 {{-- <div class="bk-cart">
@@ -216,11 +219,10 @@
             <div class="sample_content_heading">
                 {{-- <p>preview</p> --}}
             </div>
-            {{-- <pre>{{$data->prod_extraContent}}</pre> --}}
-            @foreach($extra_info as $info)
+            {!! htmlspecialchars_decode($data['prod_extraContent']) !!}
+            {{-- @foreach($extra_info as $info)
                 <p>{{$info}} </p>
-                {{-- <pre>{{$data->prod_extraContent}}</pre> --}}
-            @endforeach
+            @endforeach --}}
         </div>
 
         {{-- <p>{{$data->prod_title}}</p> --}}

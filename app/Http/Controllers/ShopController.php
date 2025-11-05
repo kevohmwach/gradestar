@@ -75,8 +75,8 @@ class ShopController extends Controller
 
         if (filter_var($product, FILTER_SANITIZE_STRING)!== false) {
             $data = Product::where('slug', $product)->first();
-            $extra_info = $data['prod_extraContent'];
-            $extra_info = explode( "<br>", $extra_info);
+            // $extra_info = $data['prod_extraContent'];
+            // $extra_info = explode( "<br>", $extra_info);
 
             $data['prod_overview1_descriprion'] = clean($data['prod_overview1_descriprion']);
 
@@ -126,7 +126,7 @@ class ShopController extends Controller
                 [
                     //compact('data')
                     'data' => $data,
-                    'extra_info' => $extra_info,
+                    // 'extra_info' => $extra_info,
                     'promotions' => $promotion,
                     'pages' => 'Pages '.$no_pages,
                     'canonical_url' => $canonical_url,
@@ -140,7 +140,7 @@ class ShopController extends Controller
                 return view('shop.show', 
                 [
                     'data' => $data,
-                    'extra_info' => $extra_info,
+                    // 'extra_info' => $extra_info,
                     'promotions' => $promotion,
                     'pages' => '',
                     'canonical_url' => $canonical_url,

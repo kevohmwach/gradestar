@@ -47,6 +47,14 @@
     margin-top: 10px;
     background-color: white;
 }
+.prod_more{
+    /* text-align: center; */
+    padding: 10px;
+}
+
+.seo_image{
+    padding-bottom: 10px;
+}
 .product_info > div {
     /* text-align: center; */
     /* padding: 5px; */
