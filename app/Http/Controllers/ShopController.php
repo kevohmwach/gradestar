@@ -5,6 +5,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Spatie\SchemaOrg\Schema;
+use Illuminate\Support\Facades\Cache;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -52,13 +53,26 @@ class ShopController extends Controller
       
     
     public function index(){
-        $promotion = Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray();
-        //dd($promotion);
+        // Define how long to cache (in seconds). 600 seconds = 10 minutes.
+        $cacheDuration_promo = 600; 
+        $cacheKey_promo = 'product.promotion';
+
+        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray());
+        
+        // $cacheDuration_products = 600;
+        // $cacheKey_products = 'product.promotion';
+        // $product = Cache::remember($cacheKey_products, $cacheDuration_products, function (){
+        //     return Product::latest()->get();
+        // });
+        // $product = $product->paginate(16);
+        //dd($product);
+        //dd(Product::latest()->paginate(16));
         
         //$promotion = Product::latest()->limit(5)->get()->toArray();
         session()->put("promotion", $promotion);
 
         return view('shop.index', [
+            // 'products' => $product,
             'products' => Product::latest()->paginate(16),
             'promotions' => $promotion,
             'canonical_url' => url()->current(),
@@ -67,13 +81,20 @@ class ShopController extends Controller
     }
 
     public function show($product){
-        $promotion = Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray();
+        // Define how long to cache (in seconds). 600 seconds = 10 minutes.
+        $cacheDuration_promo = 600; 
+
+        // The cache key
+        $cacheKey_promo = 'product.promotion';
+
+        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray());
 
         $product = $this->checkInput($product);
        
         
 
         if (filter_var($product, FILTER_SANITIZE_STRING)!== false) {
+
             $data = Product::where('slug', $product)->first();
             // $extra_info = $data['prod_extraContent'];
             // $extra_info = explode( "<br>", $extra_info);
@@ -185,7 +206,12 @@ class ShopController extends Controller
     public function search(){
         //dd(request()->search);
         //$searchTerm = request()->search;
-        $promotion = Product::where('prod_Percent_discount', '>', 0)->get()->toArray();
+        //$promotion = Product::where('prod_Percent_discount', '>', 0)->get()->toArray();
+        $cacheDuration_promo = 600; 
+        $cacheKey_promo = 'product.promotion';
+
+        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray());
+        
 
         $searchTerm = $this->checkInput(request()->p);
 
@@ -295,7 +321,12 @@ class ShopController extends Controller
         }
     }
     public function cart(){
-        $promotion = Product::where('prod_Percent_discount', '>', 0)->get()->toArray();
+        //cacheKey_promo = Product::where('prod_Percent_discount', '>', 0)->get()->toArray();
+        $cacheDuration_promo = 600; 
+        $cacheKey_promo = 'product.promotion';
+
+        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray());
+        
         $dataArray = [];
         $cartTotals = 0;
         for ($i=0; $i < 10; $i++) { 

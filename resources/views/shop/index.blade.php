@@ -38,9 +38,10 @@
                     <h2 class="seo_h2" > {{$product->prod_course}} course</h2>
                 </div> --}}
 
-                <div class="bk-tags">
+                {{-- <div class="bk-tags">
                     <p>{{$product->prod_category}}</p>
-                </div>
+                </div> --}}
+                
 
                 <div class="bk-price">
                     @if ($product->prod_Percent_discount > 0)

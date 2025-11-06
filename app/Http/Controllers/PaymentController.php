@@ -9,6 +9,7 @@ use App\Models\Billing;
 use App\Models\Product;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Newpurchase;
+use Illuminate\Support\Facades\Cache;
 
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
@@ -49,7 +50,12 @@ class PaymentController extends Controller
     }
 
     public function status(){
-        $promotion = Product::where('prod_Percent_discount', '>', 0)->get()->toArray();
+        //$promotion = Product::where('prod_Percent_discount', '>', 0)->get()->toArray();
+        $cacheDuration_promo = 600; 
+        $cacheKey_promo = 'product.promotion';
+
+        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray());
+        
 
         if (session()->get('payment_status')=='success' ) {
             return view('payment.status',[

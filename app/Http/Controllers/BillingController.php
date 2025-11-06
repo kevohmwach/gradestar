@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Billing;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cache;
 
 class BillingController extends Controller
 {
@@ -26,7 +27,12 @@ class BillingController extends Controller
         //     //'dataArray' => $dataArray,
         //     //'cartTotals' => $cartTotals
         // ]);
-        $promotion = Product::where('prod_Percent_discount', '>', 0)->get()->toArray();
+        //$promotion = Product::where('prod_Percent_discount', '>', 0)->get()->toArray();
+        $cacheDuration_promo = 600; 
+        $cacheKey_promo = 'product.promotion';
+
+        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray());
+        
         
         $dataArray = [];
         $cartTotals = 0;
