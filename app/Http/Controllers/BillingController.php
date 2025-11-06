@@ -31,7 +31,7 @@ class BillingController extends Controller
         $cacheDuration_promo = 600; 
         $cacheKey_promo = 'product.promotion';
 
-        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray());
+        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(8)->get()->toArray());
         
         
         $dataArray = [];
