@@ -23,7 +23,6 @@
                 <iframe 
                     class = "preview_file" 
                     src="/preview/{{$data->id}}" 
-                    {{-- src="{{storage_path('app/public'.$data->prod_preview)}}" --}}
                     frameborder="0" 
                     scrolling="auto"
                     loading="lazy"
@@ -56,58 +55,24 @@
             <div class="product_info">
                 <div class="prod_title">
                     <h1 class="seo_h1">{{$data->prod_title}}</h1>
-                    {{-- <h1 class="seo_h1">{{$keywords[0]}}</h1> --}}
                 </div>
                 <div class="prod_description">
-                    {{-- <h2 class="seo_h2">{{$data->prod_description}} course</h2> --}}
-                    {{-- <h2 class="seo_h2">{!! htmlspecialchars_decode($data->prod_description) !!}</h2> --}}
                     <div >{!! htmlspecialchars_decode($data->prod_description) !!}</div>
                 </div>
                 
-                <div>
-                    
-                    {{-- <p class="text-secondary"><strong> {{$keywords[0]}},</strong></p> --}}
+                {{-- <div>
                     <ul class="other_titles">
-                        {{-- <li class="text-primary">Other similar search names</li>
-                            <li class="text-secondary"><strong> {{$keywords[0]}},</strong></li> --}}
-                        {{-- @foreach($keywords as $keyword)
-                            <li class="text-secondary"><strong> {{$keyword}},</strong></li>
-                        @endforeach --}}
+                        
                     </ul>
-                </div>
-                {{-- <div class="prod_category">
-                    <h2 class="seo_h2">{{$data->prod_category}}</h2>
                 </div> --}}
-                {{-- <div class="prod_course">
-                    <h2 class="seo_h2" >Written for {{$data->prod_course}} </h2>
-                    <p>Written for <strong> {{$data->prod_course}}.</strong> </p>
-                </div> --}}
-                    {{-- @if ($data->prod_Percent_discount > 0)
-                        <div class="discount">
-                            <p class="actual-price actual-price-discounted"><s>${{round($data->prod_actualPrice,2)}}</s></p>
-                            <p class="discounted-price">${{round($data->prod_actualPrice* (1-($data->prod_Percent_discount*0.01)),2) }}</p>
-                        </div>
-                    @else
-                        <div class="non-discount">
-                            <p class="actual-price">${{$data->prod_actualPrice}}</p>
-                        </div>
-                    @endif --}}
-                {{-- <div class="prod_price">
-                    <p>Price: ${{$data->prod_actualPrice}}</p>
-                </div> --}}
+                
                 <div class="prod_more">
                     <div class="seo_image">
                         <img src="../storage/{{$data->prod_image}}"  alt="{{$data->prod_title}}" width="100px" height="100px">
                     </div>
                     <p class="text-info">{{$pages}}</p>
                 </div>
-                {{-- <div class="bk-cart">
-                    <button>
-                        <a href="/addcart/{{$data->id}}">
-                            Add to cart
-                        </a> 
-                    </button>
-                </div> --}}
+               
             </div>
 
         </div>
@@ -216,16 +181,12 @@
         </div>
         
         <div class="product_content">
-            <div class="sample_content_heading">
-                {{-- <p>preview</p> --}}
-            </div>
+            {{-- <div class="sample_content_heading">
+               
+            </div> --}}
             {!! htmlspecialchars_decode($data['prod_extraContent']) !!}
-            {{-- @foreach($extra_info as $info)
-                <p>{{$info}} </p>
-            @endforeach --}}
+          
         </div>
-
-        {{-- <p>{{$data->prod_title}}</p> --}}
     </div>
     <div class="promotion-content">
         <p class="hot-deals">Grab limited Hot deals now </p>
@@ -241,14 +202,7 @@
                     </div>
                     </a>
 
-                    {{-- <div class="bk-tags">
-                        <p>{{$promotion['prod_category']}}</p>
-                    </div> --}}
-
                     <div class="bk-price">
-                        {{-- <div class="non-discount">
-                            <p class="actual-price">${{$promotion['prod_actualPrice']}}</p>
-                        </div> --}}
                         <div class="discount">
                             <p class="actual-price actual-price-discounted"><s>${{$promotion['prod_actualPrice']}}</s></p>
                             <p class="discounted-price">${{ round($promotion['prod_actualPrice']* (1-($promotion['prod_Percent_discount']*0.01)),2) }}</p>

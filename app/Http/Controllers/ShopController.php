@@ -96,8 +96,6 @@ class ShopController extends Controller
         if (filter_var($product, FILTER_SANITIZE_STRING)!== false) {
 
             $data = Product::where('slug', $product)->first();
-            // $extra_info = $data['prod_extraContent'];
-            // $extra_info = explode( "<br>", $extra_info);
 
             $data['prod_overview1_descriprion'] = clean($data['prod_overview1_descriprion']);
 
@@ -145,14 +143,11 @@ class ShopController extends Controller
             if($no_pages>0 && is_numeric($no_pages) ){
                 return view('shop.show', 
                 [
-                    //compact('data')
                     'data' => $data,
-                    // 'extra_info' => $extra_info,
                     'promotions' => $promotion,
                     'pages' => 'Pages '.$no_pages,
                     'canonical_url' => $canonical_url,
                     'keywords' => explode( ",", $data['prod_keywords']),
-                    //'keywords' => $keywords,
                     'schema' => $schema,
               
                     
@@ -161,7 +156,6 @@ class ShopController extends Controller
                 return view('shop.show', 
                 [
                     'data' => $data,
-                    // 'extra_info' => $extra_info,
                     'promotions' => $promotion,
                     'pages' => '',
                     'canonical_url' => $canonical_url,
@@ -182,9 +176,7 @@ class ShopController extends Controller
 
             $complete_path = storage_path('app/public/'.$file_path);
             
-            // if (!Auth::check()) {
-            //     return response()->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
-            // }
+           
             if (!file_exists($complete_path)) {
                 //return response()->json(['error' => 'File not found.'], Response::HTTP_NOT_FOUND);
                 return response('Error: Preview File not found');
@@ -194,19 +186,12 @@ class ShopController extends Controller
             $response = Response::make($file, 200);
             $response->header('Content-Type', 'application/pdf');
             return $response;
-            //return response()->file($complete_path);
-            // return view('shop.preview', [
-            //     'complete_path' => $complete_path
-            // ]);
         }
         
 
     }
 
     public function search(){
-        //dd(request()->search);
-        //$searchTerm = request()->search;
-        //$promotion = Product::where('prod_Percent_discount', '>', 0)->get()->toArray();
         $cacheDuration_promo = 600; 
         $cacheKey_promo = 'product.promotion';
 
@@ -218,22 +203,13 @@ class ShopController extends Controller
         if (filter_var($searchTerm, FILTER_SANITIZE_STRING)!== false) {
             $data_title = Product::where('prod_title', 'LIKE', "%{$searchTerm}%")->get()->toArray();
             $data_keys = Product::where('prod_keywords', 'LIKE', "%{$searchTerm}%")->get()->toArray();
-            //$data_key2 = Product::where('prod_keyword2', 'LIKE', "%{$searchTerm}%")->get()->toArray();
-            //$data_key3 = Product::where('prod_keyword3', 'LIKE', "%{$searchTerm}%")->get()->toArray();
-            //$data_slug = Product::where('slug', 'LIKE', "%{$searchTerm}%")->get()->toArray();
 
-            //$searchResult = array_merge($data_title,$data_key1,$data_key2,$data_key3,$data_slug);
             $searchResult = array_merge($data_title,$data_keys);
             $searchResult = array_unique($searchResult,SORT_REGULAR);
 
             if(!empty($searchResult)){
                 $searchResult = $this->paginate($searchResult);
 
-   
-
-                //return view('paginate', compact('data'));
-
-                //dd($searchResult);
                 return view('shop.search', 
                     [
                         'searchResults' => $searchResult,
@@ -249,26 +225,6 @@ class ShopController extends Controller
                     ]);
             }
 
-
-            
-            // $file_path = storage_path('app/public'.$data['prod_file']);
-            // $no_pages = $this->getNumPagesPdf($file_path);
-            
-            // if($no_pages>0 && is_numeric($no_pages) ){
-            //     return view('shop.show', 
-            //     [
-            //         //compact('data')
-            //         'data' => $data,
-            //         'pages' => 'Pages '.$no_pages
-            //     ]);
-            // }else{
-            //     return view('shop.show', 
-            //     [
-            //         'data' => $data,
-            //         'pages' => ''
-            //     ]);
-
-            // }
         }
     }
 
@@ -287,7 +243,6 @@ class ShopController extends Controller
                     break;
                 }
             }
-            //dd( session()->get('cart0') );
             return redirect()->to('/cart');
            
         }
@@ -321,7 +276,6 @@ class ShopController extends Controller
         }
     }
     public function cart(){
-        //cacheKey_promo = Product::where('prod_Percent_discount', '>', 0)->get()->toArray();
         $cacheDuration_promo = 600; 
         $cacheKey_promo = 'product.promotion';
 
@@ -331,11 +285,6 @@ class ShopController extends Controller
         $cartTotals = 0;
         for ($i=0; $i < 10; $i++) { 
             $session_name = "cart".$i;
-
-            if( session()->missing($session_name) ){
-                //break;
-            }
-            //$data = array_merge();
             $id = session()->get($session_name);
             if($id){
                 $item =Product::find($id);

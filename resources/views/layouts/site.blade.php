@@ -30,76 +30,15 @@
     <meta name="twitter:description" content="@yield('meta_description')">
     <meta name="twitter:image" content="@yield('image_url')">
 
-    
 
-    {{-- <title>{{ config('app.name', 'Gradestar') }} - @yield('title')</title> --}}
-
-    <!-- Fonts -->
-    {{-- <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> --}}
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Scripts -->
-    {{-- @vite(['resources/js/app.js'])
-    @vite(['resources/css/product.css'])
-    @vite(['resources/css/site.css']) --}}
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
     @vite([
 
         'resources/js/app.js',
         'resources/css/site.css',
-        'resources/css/product.css',
+        // 'resources/css/product.css',
 
         ])
-    
-
-    {{-- <link href="{{ asset('assets/css/site.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/product.css') }}" rel="stylesheet"> --}}
-
-
-
-    {{-- <script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "Professional Nursing Concepts & Challenges 9th Edition Test Bank",
-  "image": "https://www.gradestarsolutions.com/wp-content/uploads/2025/10/professional-nursing-concepts-challenges-9th-edition-test-bank.jpg",
-  "description": "Download the Professional Nursing Concepts & Challenges 9th Edition Test Bank by Beth Perry Black. Includes verified questions, correct answers, and instant PDF access for nursing exam preparation.",
-  "sku": "PNCC9E-TB",
-  "brand": {
-    "@type": "Organization",
-    "name": "Gradestar Solutions"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Beth Perry Black"
-  },
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.gradestarsolutions.com/shop/professional-nursing-concepts-challenges-9th-edition-test-bank",
-    "priceCurrency": "USD",
-    "price": "17.99",
-    "priceValidUntil": "2025-12-31",
-    "itemCondition": "https://schema.org/NewCondition",
-    "availability": "https://schema.org/InStock",
-    "deliveryLeadTime": "PT0H",
-    "hasDigitalDocumentPermission": {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission"
-    }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "126"
-  },
-  "isAccessoryOrSparePartFor": {
-    "@type": "Book",
-    "name": "Professional Nursing: Concepts & Challenges (9th Edition)",
-    "author": "Beth Perry Black"
-  }
-}
-</script> --}}
 
     
     
