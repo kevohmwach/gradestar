@@ -25,7 +25,7 @@
 
     @vite([
         'resources/js/app.js',
-        'resources/css/site.css',
+        'resources/css/app.css',
         ])
 
 </head>
