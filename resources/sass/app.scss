@@ -4,14 +4,25 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
+// // Bootstrap
+// @import 'bootstrap/scss/bootstrap';
 
-// 1. Core utilities needed for almost everything
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
+// 1. CORE FUNCTIONS, VARIABLES, AND MIXINS (ABSOLUTE ESSENTIALS)
+// These define all primary values and the Sass logic.
+@import "bootstrap/scss/functions"; 
+@import "bootstrap/scss/variables"; // Defines $theme-colors map
+@import "bootstrap/scss/maps";      // Defines $theme-colors-rgb (Fixes your error!)
 @import "bootstrap/scss/mixins";
-@import "bootstrap/scss/root";
 
-// 2. Only components you use (e.g., for pagination, use only this)
+// 2. BASELINE DEFINITIONS (These rely on the items in step 1)
+@import "bootstrap/scss/root";    // Defines CSS variables (:root) - Now works!
+@import "bootstrap/scss/reboot";  // CSS reset
+
+// 3. COMPONENTS (Only import what you use, e.g., pagination)
 @import "bootstrap/scss/pagination"; 
+
+// 4. UTILITIES (For margins, padding, text, etc.)
+@import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/utilities/api"; 
+
+// ... Your custom styles ...
