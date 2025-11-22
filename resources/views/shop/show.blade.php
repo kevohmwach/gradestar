@@ -25,7 +25,7 @@
                     src="/preview/{{$data->id}}" 
                     frameborder="0" 
                     scrolling="auto"
-                    loading="lazy"
+                    loading="eager"
                     title="{{$data->prod_title}}" >
                     <!DOCTYPE html>
                     <html lang="en">

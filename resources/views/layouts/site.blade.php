@@ -5,13 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    {{-- if(isset($bk_title)){
-        <title>{{ $bk_title }}</title>
-    }else{
-        <title>{{ config('app.name', 'Gradestar') }}</title>
-    } --}}
-    
     <title> @yield('title') </title>
     <link href="@yield('canonical_url')" rel="canonical">
     <meta name="title" content="@yield('meta_title')">
@@ -30,18 +23,11 @@
     <meta name="twitter:description" content="@yield('meta_description')">
     <meta name="twitter:image" content="@yield('image_url')">
 
-
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
     @vite([
-
         'resources/js/app.js',
         'resources/css/site.css',
-        // 'resources/css/product.css',
-
         ])
 
-    
-    
 </head>
 <body>
     <div class="wrapper" >
@@ -60,10 +46,6 @@
                     {{-- </a> --}}
                 </div>
             </div>
-
-            {{-- <div class="site-title">
-                <p>GRADESTAR</p>
-            </div> --}}
 
             <div class="search_div" >
                 {{-- {{route('search')}} --}}
