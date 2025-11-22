@@ -73,7 +73,7 @@ class ShopController extends Controller
 
         return view('shop.index', [
             // 'products' => $product,
-            'products' => Product::latest()->paginate(1),
+            'products' => Product::latest()->paginate(16),
             'promotions' => $promotion,
             'canonical_url' => url()->current(),
             //'image_url' => storage_path('app/public/'.$file_path);
