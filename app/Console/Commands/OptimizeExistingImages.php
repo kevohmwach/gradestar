@@ -51,10 +51,10 @@ class OptimizeExistingImages extends Command
         foreach ($imageFiles as $file) {
             $path = $file->getRealPath();
             $filename = $file->getFilename();
+            $extension = strtolower($file->getExtension());
 
             // Check if the file is a PNG before processing
-            if (strtolower($file->getExtension()) !== 'png') {
-            //if (!in_array(strtolower($file->getExtension()), ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif'])) {
+            if (!in_array($extension, ['png', 'jpg', 'jpeg'])) {
                 // $this->warn("Skipping: '{$filename}' (Not a PNG file).");
                 continue;
             }
@@ -64,41 +64,53 @@ class OptimizeExistingImages extends Command
 
                 // --- INTERVENTION/IMAGE (Lossy Resize & Color Limit) ---
                 try {
-                    $img = Image::make($path);
-                    
+                    $this->line(''); // Add a newline for cleaner output
                     $this->info("Processing: {$filename}");
                     $originalSize = File::size($path);
-
-                    // 1. Resize and apply constraints
-                    $this->info("Resizing: " . basename($path));
+                    $this->comment("   Original Size: " . round($originalSize / 1024, 2) . " KB");
+                    
+                    // --- INTERVENTION/IMAGE (Lossy Resize) ---
+                    $img = Image::make($path);
+                    
+                    // 1. Resize and apply constraints (shared by both formats)
                     $img->resize(1000, null, function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize(); 
                     });
-                    
-                    // 2. Reduce the color palette for smaller PNG files
-                    $img->limitColors(256, 10); 
 
-                    // 3. Save (overwrites the original, applying Intervention's optimization)
-                    $img->save($path);
-                    
+                    // 2. Apply format-specific lossy optimization
+                    if ($extension === 'png') {
+                        // PNG Lossy Optimization: Convert to PNG-8 (256 colors)
+                        $img->limitColors(256, 10); 
+                        // Save without quality parameter (uses default lossless PNG compression)
+                        $img->save($path);
+                        $this->comment("   Lossy Step: Applied PNG-8 conversion.");
+
+                    } elseif (in_array($extension, ['jpg', 'jpeg'])) {
+                        // JPEG Lossy Optimization: Set quality factor to 80
+                        // Intervention/Image handles saving the JPEG file type.
+                        $img->save($path, 80); 
+                        $this->comment("   Lossy Step: Applied JPEG quality 80/100.");
+                    }
+
                     $interventionSize = File::size($path);
-                    $this->comment("   Intervention Step Complete. Size: " . round($interventionSize / 1024, 2) . " KB");
+                    $this->comment("   Intervention Step Complete. Intermediate Size: " . round($interventionSize / 1024, 2) . " KB");
 
                     
                     // --- SPATIE/IMAGE-OPTIMIZER (Lossless Compression) ---
 
-                    // 4. Run Spatie's lossless optimizer on the already resized file
-                    $this->info("Optimizing: " . basename($path));
+                    // 3. Run Spatie's lossless optimizer on the already resized file
+                    // This strips metadata and applies the best available lossless compressor.
                     $optimizerChain->optimize($path); 
 
                     $finalSize = File::size($path);
                     
-                    $this->comment("  Spatie Step Complete. Final Size: " . round($finalSize / 1024, 2) . " KB");
+                    $this->comment("   Spatie Step Complete. Final Size: " . round($finalSize / 1024, 2) . " KB");
                     $reduction = ($originalSize - $finalSize) / $originalSize * 100;
                     $this->info("Total Reduction: " . round($reduction, 2) . "%");
 
                 } catch (\Exception $e) {
+                    // Catches errors like "GD Library extension not available"
                     $this->error("Error optimizing {$filename}: " . $e->getMessage());
                 }
 
