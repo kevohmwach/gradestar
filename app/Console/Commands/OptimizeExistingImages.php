@@ -59,7 +59,7 @@ class OptimizeExistingImages extends Command
                 continue;
             }
 
-            if(basename($path) == "9dguqmydpYJB65aUSjSBljAvp0bh03xBAN7ThWHb.png"){//production
+            //if(basename($path) == "9dguqmydpYJB65aUSjSBljAvp0bh03xBAN7ThWHb.png"){//production
             //if(basename($path) == "RI8UCc3NZoD4n4ja1FFMslQ7QbMAIa0PfVO5zwuq.png"){
 
                 // --- INTERVENTION/IMAGE (Lossy Resize & Color Limit) ---
@@ -115,7 +115,7 @@ class OptimizeExistingImages extends Command
                 }
 
                 // $this->info("✅ All image files processed.");
-            }
+            //}
 
         }
 
