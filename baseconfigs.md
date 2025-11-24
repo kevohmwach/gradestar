@@ -15,3 +15,6 @@ git push --set-upstream gradestar main
 
 # Schema data package
 composer require spatie/laravel-schema-org
+
+# Optimize existing images
+php artisan optimize:existing-images
