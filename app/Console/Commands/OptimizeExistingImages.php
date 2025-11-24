@@ -37,7 +37,7 @@ class OptimizeExistingImages extends Command
         // 2. Use the File facade to get all files recursively
         // Change File::allFiles to File::files if you only want files in the top 'images' folder
         $files = File::allFiles($fullPath); 
-        var_dump($files);
+        // var_dump($files);
         // dd($files);
 
         $optimizerChain = OptimizerChainFactory::create();
@@ -51,11 +51,11 @@ class OptimizeExistingImages extends Command
                 $this->warn("Skipping non-image file: " . basename($path));
                 continue;
             }
-            if(basename($path) == "2F1zWg9SZYkVEPOKtnI3Ba5Jiyns8XUIMR6MWfCW.png"){
+            if(basename($path) == "9dguqmydpYJB65aUSjSBljAvp0bh03xBAN7ThWHb.png"){
                 $this->info("Optimizing: " . basename($path));
                 $optimizerChain->optimize($path); 
             }
-            $this->info("Optimizing: " . basename($path));
+            // $this->info("Optimizing: " . basename($path));
             // $optimizerChain->optimize($path); 
         }
 
