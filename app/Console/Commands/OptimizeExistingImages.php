@@ -60,7 +60,7 @@ class OptimizeExistingImages extends Command
             }
 
             //if(basename($path) == "9dguqmydpYJB65aUSjSBljAvp0bh03xBAN7ThWHb.png"){//production
-            //if(basename($path) == "RI8UCc3NZoD4n4ja1FFMslQ7QbMAIa0PfVO5zwuq.png"){
+            if(basename($path) == "RI8UCc3NZoD4n4ja1FFMslQ7QbMAIa0PfVO5zwuq.png"){
 
                 // --- INTERVENTION/IMAGE (Lossy Resize & Color Limit) ---
                 try {
@@ -97,6 +97,14 @@ class OptimizeExistingImages extends Command
                     $this->comment("   Intervention Step Complete. Intermediate Size: " . round($interventionSize / 1024, 2) . " KB");
 
                     
+                    // --- STAGE 2: WebP Generation ---
+                    // ----------------------------------------------------
+                    $webpPath = "{$directory}/{$basename}.webp";
+                    // Convert and save a new WebP file (WebP quality 80 is a good standard)
+                    $img->save($webpPath, 80, 'webp');
+                    $webpSize = File::size($webpPath);
+                    $this->comment("   WebP Generated: {$basename}.webp at " . round($webpSize / 1024, 2) . " KB (Quality 80).");
+                    
                     // --- SPATIE/IMAGE-OPTIMIZER (Lossless Compression) ---
 
                     // 3. Run Spatie's lossless optimizer on the already resized file
@@ -115,7 +123,7 @@ class OptimizeExistingImages extends Command
                 }
 
                 // $this->info("✅ All image files processed.");
-            //}
+            }
 
         }
 
