@@ -68,7 +68,35 @@
                 
                 <div class="prod_more">
                     <div class="seo_image">
-                        <img src="../storage/{{$data->prod_image}}"  alt="{{$data->prod_title}}" width="100px" height="100px">
+                        {{-- <img src="../storage/{{$data->prod_image}}"  alt="{{$data->prod_title}}" width="100px" height="100px"> --}}
+                        @php
+                            // 1. Define the dynamic variables from your parent view/loop
+                            // We assume these are available where this snippet is included.
+                            $dynamicImagePath = $data->prod_image ?? 'images/placeholder-product.jpg';
+                            $imageTitle = $data->prod_title ?? 'Product Placeholder Image';
+
+                            // 2. Determine the parts of the path for WebP generation
+                            $parts = pathinfo($dynamicImagePath);
+
+                            // Reconstruct the directory path, ensuring it ends with a slash if non-empty
+                            $directory = $parts['dirname'] === '.' ? '' : $parts['dirname'] . '/';
+
+                            // Construct the WebP path (same directory, same filename, new .webp extension)
+                            $webpPath = $directory . $parts['filename'] . '.webp';
+
+                            // 3. Generate the public URLs using Laravel's asset helper
+                            // Assuming the files are publicly accessible via the 'storage' symlink.
+                            $originalUrl = asset('storage/' . $dynamicImagePath);
+                            $webpUrl = asset('storage/' . $webpPath);
+                        @endphp
+                        <picture>
+                            <source srcset="{{ $webpUrl }}" type="image/webp">
+                            <img
+                                src="{{ $originalUrl }}"
+                                alt="{{ $imageTitle }}"
+                                class="webP_seo_image"
+                            >
+                        </picture>
                     </div>
                     <p class="text-info">{{$pages}}</p>
                 </div>
@@ -195,7 +223,37 @@
                 <div class="promotion-column">
                     <a href="{{url('/shop', $promotion['slug'])}}" >
                     <div class="bk-image bk-image-promo">
-                        <img src="../storage/{{$promotion['prod_image']}}" alt="{{$promotion['prod_title']}}">
+                        {{-- <img src="../storage/{{$promotion['prod_image']}}" alt="{{$promotion['prod_title']}}"> --}}
+
+                        @php
+                            // 1. Define the dynamic variables from your parent view/loop
+                            // We assume these are available where this snippet is included.
+                            $dynamicImagePath = $promotion['prod_image'] ?? 'images/placeholder-product.jpg';
+                            $imageTitle = $promotion['prod_title'] ?? 'Product Placeholder Image';
+
+                            // 2. Determine the parts of the path for WebP generation
+                            $parts = pathinfo($dynamicImagePath);
+
+                            // Reconstruct the directory path, ensuring it ends with a slash if non-empty
+                            $directory = $parts['dirname'] === '.' ? '' : $parts['dirname'] . '/';
+
+                            // Construct the WebP path (same directory, same filename, new .webp extension)
+                            $webpPath = $directory . $parts['filename'] . '.webp';
+
+                            // 3. Generate the public URLs using Laravel's asset helper
+                            // Assuming the files are publicly accessible via the 'storage' symlink.
+                            $originalUrl = asset('storage/' . $dynamicImagePath);
+                            $webpUrl = asset('storage/' . $webpPath);
+                        @endphp
+                        <picture>
+                            <source srcset="{{ $webpUrl }}" type="image/webp">
+                            <img
+                                src="{{ $originalUrl }}"
+                                alt="{{ $imageTitle }}"
+                                class="webP-image"
+                            >
+                        </picture>
+
                     </div>
                     <div class="bk-title">
                         <p>{{$promotion['prod_title']}}</p>

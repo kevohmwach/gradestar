@@ -52,6 +52,8 @@ class OptimizeExistingImages extends Command
             $path = $file->getRealPath();
             $filename = $file->getFilename();
             $extension = strtolower($file->getExtension());
+            $basename = $file->getBasename("." . $extension);
+            $directory = $file->getPath();
 
             // Check if the file is a PNG before processing
             if (!in_array($extension, ['png', 'jpg', 'jpeg'])) {
@@ -60,7 +62,7 @@ class OptimizeExistingImages extends Command
             }
 
             //if(basename($path) == "9dguqmydpYJB65aUSjSBljAvp0bh03xBAN7ThWHb.png"){//production
-            if(basename($path) == "RI8UCc3NZoD4n4ja1FFMslQ7QbMAIa0PfVO5zwuq.png"){
+            //if(basename($path) == "RI8UCc3NZoD4n4ja1FFMslQ7QbMAIa0PfVO5zwuq.png"){
 
                 // --- INTERVENTION/IMAGE (Lossy Resize & Color Limit) ---
                 try {
@@ -125,7 +127,7 @@ class OptimizeExistingImages extends Command
                 // $this->info("✅ All image files processed.");
             }
 
-        }
+        //}
 
         $this->info("✅ All image files processed.");
         
