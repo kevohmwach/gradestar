@@ -227,33 +227,67 @@
 
                         @php
                             // 1. Define the dynamic variables from your parent view/loop
-                            // We assume these are available where this snippet is included.
                             $dynamicImagePath = $promotion['prod_image'] ?? 'images/placeholder-product.jpg';
                             $imageTitle = $promotion['prod_title'] ?? 'Product Placeholder Image';
 
-                            // 2. Determine the parts of the path for WebP generation
+                            // 2. Determine the parts of the path
                             $parts = pathinfo($dynamicImagePath);
-
-                            // Reconstruct the directory path, ensuring it ends with a slash if non-empty
                             $directory = $parts['dirname'] === '.' ? '' : $parts['dirname'] . '/';
+                            $filename = $parts['filename'];
+                            $extension = $parts['extension'] ?? 'jpg'; // Default to jpg if extension is missing
 
-                            // Construct the WebP path (same directory, same filename, new .webp extension)
-                            $webpPath = $directory . $parts['filename'] . '.webp';
+                            $sizes = [
+                                // 300w is ideal for your current display size (223px)
+                                300 => [
+                                    'original' => asset("storage/{$directory}{$filename}-300w.{$extension}"),
+                                    'webp' => asset("storage/{$directory}{$filename}-300w.webp")
+                                ],
+                                // 600w is for larger contexts or high-DPI (2x) displays
+                                600 => [
+                                    'original' => asset("storage/{$directory}{$filename}-600w.{$extension}"),
+                                    'webp' => asset("storage/{$directory}{$filename}-600w.webp")
+                                ],
+                                // 900w is the original max size from your PHP script (1000px max width)
+                                900 => [
+                                    'original' => asset("storage/{$directory}{$filename}.{$extension}"),
+                                    'webp' => asset("storage/{$directory}{$filename}.webp")
+                                ],
+                            ];
 
-                            // 3. Generate the public URLs using Laravel's asset helper
-                            // Assuming the files are publicly accessible via the 'storage' symlink.
-                            $originalUrl = asset('storage/' . $dynamicImagePath);
-                            $webpUrl = asset('storage/' . $webpPath);
+                            // Build the srcset strings using the generated URLs and width descriptors (w)
+                            $webpSrcset = collect($sizes)->map(function ($urls, $width) {
+                                return "{$urls['webp']} {$width}w";
+                            })->implode(', ');
+
+                            $originalSrcset = collect($sizes)->map(function ($urls, $width) {
+                                return "{$urls['original']} {$width}w";
+                            })->implode(', ');
+
+                            // Fallback URL for img tag (must be the lowest-res image for best performance)
+                            $fallbackUrl = $sizes[300]['original'];
                         @endphp
+
                         <picture>
-                            <source srcset="{{ $webpUrl }}" type="image/webp">
+                            <!-- 1. WebP Source: Allows the browser to pick the best size WebP file -->
+                            <source
+                                srcset="{{ $webpSrcset }}"
+                                sizes="(max-width: 400px) 300px, 100vw"
+                                type="image/webp"
+                            >
+
+                            <!-- 2. Original Format Source: Allows the browser to pick the best size JPG/PNG file -->
+                            <source
+                                srcset="{{ $originalSrcset }}"
+                                sizes="(max-width: 400px) 300px, 100vw"
+                            >
+
+                            <!-- 3. Fallback Img: Used by all browsers to display the selected image. The smallest image is the src fallback. -->
                             <img
-                                src="{{ $originalUrl }}"
+                                src="{{ $fallbackUrl }}"
                                 alt="{{ $imageTitle }}"
                                 class="webP-image"
                             >
                         </picture>
-
                     </div>
                     <div class="bk-title">
                         <p>{{$promotion['prod_title']}}</p>

@@ -34,7 +34,9 @@ class OptimizeExistingImages extends Command
         // 1. Setup the necessary tools
         $optimizerChain = OptimizerChainFactory::create();
         //$baseDir = storage_path('app/public/images'); // Adjust path as needed
+
         $baseDir = storage_path(); // Adjust path as needed
+        // $baseDir = public_path('assets/images');
 
         if (!File::isDirectory($baseDir)) {
             $this->error("Image directory not found: {$baseDir}");

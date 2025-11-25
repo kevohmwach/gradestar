@@ -37,7 +37,60 @@
                 <div class="logo-image">
                     <a  href="{{ url('/') }}">
                         <div class="logo_sizer" >
-                            <img src="{{asset('assets/images/logo.jpeg')}}" width="100%" alt="Logo">
+                            {{-- <img src="{{asset('assets/images/logo.jpeg')}}" width="100%" alt="Logo"> --}}
+                            
+                            @php
+                                // Define the base path and extension for the logo assets.
+                                // ASSUMPTION: The logo files are named 'logo.jpeg', 'logo.webp', 'logo-300w.webp', etc.
+                                $basePath = 'assets/images/logo';
+                                $originalExtension = 'jpeg';
+
+                                // 1. Define the available responsive sizes (in pixels 'w') and their full URLs
+                                $sizes = [
+                                    // Ideal for 1x displays at the 223px displayed width
+                                    300 => [
+                                        'webp' => asset("{$basePath}-300w.webp"),
+                                        'original' => asset("{$basePath}-300w.{$originalExtension}")
+                                    ],
+                                    // Ideal for 2x displays or slightly larger contexts (611px original width is close to 600w)
+                                    600 => [
+                                        'webp' => asset("{$basePath}.webp"),
+                                        'original' => asset("{$basePath}.{$originalExtension}")
+                                    ],
+                                ];
+
+                                // 2. Build the srcset strings for both formats
+                                $webpSrcset = collect($sizes)->map(fn($urls, $width) => "{$urls['webp']} {$width}w")->implode(', ');
+                                $originalSrcset = collect($sizes)->map(fn($urls, $width) => "{$urls['original']} {$width}w")->implode(', ');
+
+                                // 3. Define the fallback src (the smallest image size is the most performant fallback)
+                                $fallbackUrl = $sizes[300]['original'];
+
+                                // 4. Define the sizes attribute (tells the browser the displayed width of the image)
+                                // Since the image is small (223px displayed width), we tell the browser it occupies a max of 300px.
+                                $imageSizes = '300px'; 
+                            @endphp
+
+                            <picture>
+                                <!-- Source 1 (Prioritized for LCP): WebP version with srcset -->
+                                <source
+                                    srcset="{{ $webpSrcset }}"
+                                    sizes="{{ $imageSizes }}"
+                                    type="image/webp"
+                                >
+
+                                <!-- Source 2 (Fallback): Original JPEG/PNG version with srcset -->
+                                <img
+                                    src="{{ $fallbackUrl }}"
+                                    srcset="{{ $originalSrcset }}"
+                                    sizes="{{ $imageSizes }}"
+                                    alt="Logo"
+                                    fetchpriority="high"   {{-- Performance optimization for LCP --}}
+                                    class="webP-image-logo"
+                                >
+                            </picture>
+                            
+                           
                         </div>
                     </a>
                 </div>

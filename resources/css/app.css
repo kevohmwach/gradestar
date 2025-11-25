@@ -82,6 +82,11 @@ input, textarea{
 .logo_sizer > img{
    border-radius: 50%; 
 }
+.webP-image-logo{
+    height: 50px; 
+    width:50px;
+    border-radius: 50%;
+}
 .logo_sizer{
     height: 50px; 
     width:50px;
