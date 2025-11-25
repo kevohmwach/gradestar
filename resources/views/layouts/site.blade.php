@@ -49,7 +49,8 @@
                                 $sizes = [
                                     // Ideal for 1x displays at the 223px displayed width
                                     300 => [
-                                        'webp' => asset("{$basePath}-300w.webp"),
+                                        // 'webp' => asset("{$basePath}-300w.webp"),
+                                        'webp' => asset("{$basePath}.webp"),
                                         'original' => asset("{$basePath}-300w.{$originalExtension}")
                                     ],
                                     // Ideal for 2x displays or slightly larger contexts (611px original width is close to 600w)
