@@ -152,7 +152,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">
                                         {{-- {{ __('Login') }} --}}
-                                        <b>Account</b>
+                                        {{-- <b>Account</b> --}}
                                     </a>
                                 </li>
                             @endif
