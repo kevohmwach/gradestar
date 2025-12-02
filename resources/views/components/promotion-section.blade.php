@@ -65,10 +65,10 @@
                                 'original' => asset("storage/{$directory}{$filename}-400w.{$extension}"),
                                 'webp' => asset("storage/{$directory}{$filename}-400w.webp")
                             ],
-                            800 => [ // Corresponds to Artisan's 800w variant
-                                'original' => asset("storage/{$directory}{$filename}-800w.{$extension}"),
-                                'webp' => asset("storage/{$directory}{$filename}-800w.webp")
-                            ],
+                            // 800 => [ // Corresponds to Artisan's 800w variant
+                            //     'original' => asset("storage/{$directory}{$filename}-800w.{$extension}"),
+                            //     'webp' => asset("storage/{$directory}{$filename}-800w.webp")
+                            // ],
                             // 1200 => [ // Corresponds to Artisan's largest 1200w variant
                             //     'original' => asset("storage/{$directory}{$filename}-1200w.{$extension}"),
                             //     'webp' => asset("storage/{$directory}{$filename}-1200w.webp")
