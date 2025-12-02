@@ -312,10 +312,10 @@ footer a {
     color: rgb(201, 119, 119);
 }
 
-/* .bk-image > img {
+.bk-image > img {
     width: 100%;
     height: 150px;
-} */
+}
 .webP-image {
         width: 100%;
         height: 150px;

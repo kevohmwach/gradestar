@@ -70,39 +70,10 @@
         </div>
        
     </div>
-    <div class="promotion-content">
-        <p class="hot-deals">Grab limited Hot deals now </p>
-        @if (!empty($promotions))
-            @foreach($promotions as $promotion)
-                <div class="promotion-column">
-                    <a href="{{url('/shop', $promotion['slug'])}}" >
-                    <div class="bk-image">
-                        <img src="../storage/{{$promotion['prod_image']}}" alt="{{$promotion['prod_title']}}">
-                    </div>
-                    <div class="bk-title">
-                        <h2 class="seo_h2">{{$promotion['prod_title']}}</h2>
-                    </div>
-                    </a>
 
-                    {{-- <div class="bk-tags">
-                        <p>{{$promotion['prod_category']}}</p>
-                    </div> --}}
+    <x-promotion-section :promotions="$promotions" />
 
-                    <div class="bk-price">
-                        {{-- <div class="non-discount">
-                            <p class="actual-price">${{$promotion['prod_actualPrice']}}</p>
-                        </div> --}}
-                        <div class="discount">
-                            <p class="actual-price actual-price-discounted"><s>${{$promotion['prod_actualPrice']}}</s></p>
-                            <p class="discounted-price">${{ round($promotion['prod_actualPrice']* (1-($promotion['prod_Percent_discount']*0.01)),2) }}</p>
-                        </div>
-                        
-                    </div>
-                </div>
-            @endforeach
-        @endif
-
-    </div>
+    
  
 </div>
 
