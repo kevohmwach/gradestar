@@ -113,7 +113,7 @@
                                 then use CSS/Tailwind to manage the max size. --}}
                             width="1200" 
                             height="800" 
-                            loading="lazy"
+                            {{-- loading="lazy" --}}
                         >
                     </picture>
 
