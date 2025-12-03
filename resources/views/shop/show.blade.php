@@ -25,7 +25,7 @@
                     src="/preview/{{$data->id}}" 
                     frameborder="0" 
                     scrolling="auto"
-                    {{-- loading="lazy" --}}
+                    loading="lazy"
                     title="{{$data->prod_title}}" >
                     <!DOCTYPE html>
                     <html lang="en">
@@ -69,7 +69,7 @@
                 <div class="prod_more">
                     <div class="seo_image">
                         {{-- <img src="../storage/{{$data->prod_image}}"  alt="{{$data->prod_title}}" width="100px" height="100px"> --}}
-                        @php
+                        {{-- @php
                             // 1. Define the dynamic variables from your parent view/loop
                             // We assume these are available where this snippet is included.
                             $dynamicImagePath = $data->prod_image ?? 'images/placeholder-product.jpg';
@@ -96,7 +96,7 @@
                                 alt="{{ $imageTitle }}"
                                 class="webP_seo_image"
                             >
-                        </picture>
+                        </picture> --}}
                     </div>
                     <p class="text-info">{{$pages}}</p>
                 </div>
@@ -218,7 +218,7 @@
     </div>
 
     {{-- Pass the $promotions variable (which should be available in your view) --}}
-    <x-promotion-section :promotions="$promotions" />
+    {{-- <x-promotion-section :promotions="$promotions" /> --}}
 
     
 </div>
