@@ -88,34 +88,34 @@
                         $fallbackUrl = $sizes[300]['original'];
                     @endphp
 
-                    <picture>
+                    {{-- <picture>
                         <!-- 1. WebP Source: Allows the browser to pick the best size WebP file -->
                         <source
-                            srcset="{{ $webpSrcset }}"
+                            srcset="{{ $webpSrcset }}" --}}
                             {{-- UPDATED: Use 300px as the target for small screens --}}
-                            sizes="(max-width: 400px) 300px, 100vw"
+                            {{-- sizes="(max-width: 400px) 300px, 100vw"
                             type="image/webp"
-                        >
+                        > --}}
 
                         <!-- 2. Original Format Source: Allows the browser to pick the best size JPG/PNG file -->
-                        <source
-                            srcset="{{ $originalSrcset }}"
+                        {{-- <source
+                            srcset="{{ $originalSrcset }}" --}}
                             {{-- UPDATED: Use 300px as the target for small screens --}}
-                            sizes="(max-width: 400px) 300px, 100vw"
-                        >
+                            {{-- sizes="(max-width: 400px) 300px, 100vw"
+                        > --}}
 
                         <!-- 3. Fallback Img: Use the <img> tag's width/height attributes to prevent CLS -->
-                        <img
+                        {{-- <img
                             src="{{ $fallbackUrl }}"
                             alt="{{ $imageTitle }}"
-                            class="webP-image"
+                            class="webP-image" --}}
                             {{-- Set the aspect ratio based on the largest generated image (1200w), 
                                 then use CSS/Tailwind to manage the max size. --}}
-                            width="1200" 
-                            height="800" 
+                            {{-- width="1200" 
+                            height="800"  --}}
                             {{-- loading="lazy" --}}
-                        >
-                    </picture>
+                        {{-- >
+                    </picture> --}}
 
 
                     </div>
