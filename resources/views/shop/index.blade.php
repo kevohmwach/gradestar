@@ -19,7 +19,7 @@
         </div>
          --}}
         <div class="Navigation_seo" >
-            <h1 class="seo_h2"><a class="link_tag" href="{{route('shop')}}">Home</a> / Complete Test Banks - Questions and Answers</h1>
+            <h1 class="seo_h2"><a class="link_tag breadcrumbs" href="{{route('shop')}}">Home</a> / Complete Test Banks - Questions and Answers</h1>
         </div>
         <div class="index-row">
             @foreach($products as $product)
