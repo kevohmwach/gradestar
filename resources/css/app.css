@@ -19,6 +19,9 @@ a {
     color:rgb(13, 125, 13);
     text-decoration: underline;
 }
+.edit_book{
+    color:rgb(13, 125, 13);
+}
 
 li {
     list-style: none;

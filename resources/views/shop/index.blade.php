@@ -147,9 +147,10 @@
                     <div>
                         @isset(Auth::user()->priveledge)
                             @if(Auth::user()->priveledge>1)
-                                <a class="link_tag" href="{{route('productEdit',['id'=>$product->id])}}">Edit</a>
+                                <a class="link_tag edit_book" href="{{route('productEdit',['id'=>$product->id])}}">Edit</a>
                              @endif
                         @endisset
+                        
                         
                     </div>
                     
