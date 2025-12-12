@@ -12,6 +12,8 @@ a {
 .link_tag {
     text-decoration: none;
     cursor: ponter;
+    color: rgb(0, 0, 150);
+    
 }
 
 li {
@@ -31,7 +33,7 @@ button{
     
 }
 button > a {
-    color: azure;
+    color: #FFFFFF;
     margin : 8px;
     min-height: 48px;
     min-width: 48px;
@@ -318,12 +320,12 @@ footer a {
 }
 .discounted-price, .actual-price {
     font-weight: bold;
-    color: rgb(238, 137, 137);
+    color: rgb(150, 0, 0);
     display: inline-block;
 }
 .actual-price-discounted{
     font-weight: normal;
-    color: rgb(201, 119, 119);
+    color: rgb(150, 0, 0); 
 }
 
 .bk-image > img {
