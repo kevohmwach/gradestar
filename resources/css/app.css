@@ -12,9 +12,12 @@ a {
 .link_tag {
     text-decoration: none;
     cursor: ponter;
-    color: rgb(0, 0, 150);
     color: #FFFFFF;
     
+}
+.breadcrumbs{
+    color: rgb(0, 0, 150);
+    color:rgb(13, 125, 13);
 }
 
 li {

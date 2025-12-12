@@ -13,7 +13,7 @@
 
 @section('content')
     <div class="Navigation_seo" >
-        <p><a class="link_tag" href="{{route('shop')}}">Home</a> / {{$keywords[0]}}</p>
+        <p><a class="link_tag breadcrumbs" href="{{route('shop')}}">Home</a> / {{$keywords[0]}}</p>
     </div>
 
 <div class="containerr">
