@@ -21,8 +21,9 @@ li {
 }
 button{
     padding: 10px 30px;
-    background-color: rgb(16, 151, 16);
-    color: white;
+    /* background-color: rgb(16, 151, 16); */
+    background-color: rgb(13, 125, 13);
+    color: #FFFFFF;
     border: none;
     cursor: pointer;
     border-radius: 10px;
