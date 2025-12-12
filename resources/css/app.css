@@ -17,6 +17,7 @@ a {
 }
 .breadcrumbs{
     color:rgb(13, 125, 13);
+    text-decoration: underline;
 }
 
 li {
