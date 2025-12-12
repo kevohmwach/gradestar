@@ -150,10 +150,10 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">
+                                    {{-- <a class="nav-link" href="{{ route('login') }}"> --}}
                                         {{-- {{ __('Login') }} --}}
                                         {{-- <b>Account</b> --}}
-                                    </a>
+                                    {{-- </a> --}}
                                 </li>
                             @endif
                         @else

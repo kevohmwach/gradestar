@@ -18,15 +18,25 @@ li {
     list-style: none;
 }
 button{
-    padding: 5px 30px;
+    padding: 10px 30px;
     background-color: rgb(16, 151, 16);
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 10px;
+    min-height: 48px;
+    min-width: 48px;
+    margin : 8px;
+    border-radius: 5px;
+    
 }
 button > a {
     color: azure;
+    margin : 8px;
+    min-height: 48px;
+    min-width: 48px;
+    padding: 10px 20PX;
+    border-radius: 5px;
 }
 input, textarea{
     padding: 10px 20px;
@@ -69,7 +79,8 @@ input, textarea{
     justify-content: space-between;
     text-align: bottom;
     background-color: green;
-    color: rgb(214, 233, 224);
+    /* color: rgb(214, 233, 224); */
+    color: #FFFFFF;
 }
 .logo{
     display: flex;
@@ -125,7 +136,8 @@ input, textarea{
 }
 .nav-links > ul > li > a {
     text-decoration: none;
-    color: rgb(214, 233, 224);
+    /* color: rgb(214, 233, 224); */
+    color: #FFFFFF;
 }
 .search_input {
     padding: 10px 20px;
@@ -168,13 +180,15 @@ input, textarea{
 }
 /* ----------------footer------------------- */
 footer{
-    color: rgb(214, 233, 224);
+    /* color: rgb(214, 233, 224); */
+    color: #FFFFFF;
     background-color: green;
     padding: 10px;
     font-size: large;
 }
 footer a {
-    color: rgb(214, 233, 224);
+    /* color: rgb(214, 233, 224); */
+    color: #FFFFFF;
 }
 .footer{
     display: flex;
@@ -382,10 +396,11 @@ footer a {
     padding-bottom: 20px;
 }
 .instant_downlink_link{
-    background-color: rgb(104, 104, 240);
-    color: aliceblue;
-    padding: 2px 5px;
-    border-radius: 5px;
+    /* background-color: #FFFFFF;; */
+    color: rgb(0, 0, 150);
+    /* padding: 10px; */
+    /* border-radius: 5px; */
+    font-weight: bold; 
 }
 .Navigation_seo{
 	padding-left: 20px;
