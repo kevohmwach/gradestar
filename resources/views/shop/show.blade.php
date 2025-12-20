@@ -31,6 +31,41 @@
                     <html lang="en">
                 </iframe>
 
+                {{-- <div class="bk-cart">
+                    <br>
+                        @if ($data->prod_Percent_discount > 0)
+                            <div class="discount">
+                                <p class="actual-price actual-price-discounted"><s>${{round($data->prod_actualPrice,2)}}</s></p>
+                                <p class="discounted-price">${{round($data->prod_actualPrice* (1-($data->prod_Percent_discount*0.01)),2) }}</p>
+                            </div>
+                        @else
+                            <div class="non-discount">
+                                <p class="actual-price">${{$data->prod_actualPrice}}</p>
+                            </div>
+                        @endif
+                    <button>
+                        <a href="/addcart/{{$data->id}}">
+                            Add to cart
+                        </a> 
+                    </button>
+                </div> --}}
+
+                
+            </div>
+            <div class="product_info">
+                <div class="prod_title">
+                    <h1 class="seo_h1">{{$data->prod_title}}</h1>
+                </div>
+                <div class="prod_description">
+                    <div >{!! htmlspecialchars_decode($data->prod_description) !!}</div>
+                </div>
+                
+                {{-- <div>
+                    <ul class="other_titles">
+                        
+                    </ul>
+                </div> --}}
+
                 <div class="bk-cart">
                     <br>
                         @if ($data->prod_Percent_discount > 0)
@@ -49,22 +84,6 @@
                         </a> 
                     </button>
                 </div>
-
-                
-            </div>
-            <div class="product_info">
-                <div class="prod_title">
-                    <h1 class="seo_h1">{{$data->prod_title}}</h1>
-                </div>
-                <div class="prod_description">
-                    <div >{!! htmlspecialchars_decode($data->prod_description) !!}</div>
-                </div>
-                
-                {{-- <div>
-                    <ul class="other_titles">
-                        
-                    </ul>
-                </div> --}}
                 
                 <div class="prod_more">
                     <div class="seo_image">
@@ -113,7 +132,7 @@
 
         </div>
 
-        <div class="seo-optimizer">
+        {{-- <div class="seo-optimizer">
             <div class="seo-optimizer-1">
                 <div class="optimizer-heading">
                     @isset($data['prod_overview1_h2'])
@@ -206,7 +225,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> --}}
         
         <div class="product_content">
             {{-- <div class="sample_content_heading">
