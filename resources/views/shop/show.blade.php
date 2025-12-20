@@ -56,9 +56,9 @@
                 <div class="prod_title">
                     <h1 class="seo_h1">{{$data->prod_title}}</h1>
                 </div>
-                <div class="prod_description">
+                {{-- <div class="prod_description">
                     <div >{!! htmlspecialchars_decode($data->prod_description) !!}</div>
-                </div>
+                </div> --}}
                 
                 {{-- <div>
                     <ul class="other_titles">
