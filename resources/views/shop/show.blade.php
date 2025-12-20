@@ -84,9 +84,7 @@
                         </a> 
                     </button>
                 </div>
-                <div class="prod_description">
-                    <div >{!! htmlspecialchars_decode($data->prod_description) !!}</div>
-                </div>
+                
                 
                 <div class="prod_more">
                     <div class="seo_image">
@@ -135,7 +133,7 @@
 
         </div>
 
-        {{-- <div class="seo-optimizer">
+        <div class="seo-optimizer">
             <div class="seo-optimizer-1">
                 <div class="optimizer-heading">
                     @isset($data['prod_overview1_h2'])
@@ -149,7 +147,7 @@
                 </div>
             </div>
 
-            <div class="seo-optimizer-2">
+            {{-- <div class="seo-optimizer-2">
                 <div class="optimizer-heading">
                     @isset($data['prod_overview2_h2'])
                         <h2> {{ $data['prod_overview2_h2'] }} </h2>
@@ -226,9 +224,9 @@
                         {!! htmlspecialchars_decode($data['prod_overview7_descriprion']) !!}
                     @endisset
                 </div>
-            </div>
+            </div> --}}
 
-        </div> --}}
+        </div>
         
         <div class="product_content">
             {{-- <div class="sample_content_heading">
