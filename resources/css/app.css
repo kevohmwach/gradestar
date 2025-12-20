@@ -364,6 +364,7 @@ footer a {
 .show_content{
     display: flex;
     flex-direction: column;
+    flex-direction: column-reverse
 }
 .product_preview{
     width: 100%;
@@ -584,6 +585,7 @@ footer a {
 @media screen and (min-width: 900px)  {
     .show_content{
         flex-direction: row;
+        /* flex-direction: column-reverse */
     }
     .product_preview{
         width: 60%;
@@ -698,8 +700,12 @@ footer a {
 .optimizer-text > ul > li > a, .optimizer-text > ol > li > a, .optimizer-text > a{
     color: blue;
 }
+.prod_description {
+    margin-top: 50px;
+}
 .prod_description > div > h2{
     font-weight: normal;
     font-size: 18px;
     display: inline;
+    margin-top: 20px;
 }

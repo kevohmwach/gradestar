@@ -84,6 +84,9 @@
                         </a> 
                     </button>
                 </div>
+                <div class="prod_description">
+                    <div >{!! htmlspecialchars_decode($data->prod_description) !!}</div>
+                </div>
                 
                 <div class="prod_more">
                     <div class="seo_image">
