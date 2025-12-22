@@ -148,6 +148,7 @@ class ShopController extends Controller
                     ->url(url()->current())
                     ->priceCurrency('USD')
                     ->price($product_price)
+                    ->priceValidUntil('2026-12-31')
                     ->availability('https://schema.org/InStock')
                     // ->itemCondition('https://schema.org/NewCondition')
             );

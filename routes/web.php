@@ -30,6 +30,13 @@ Route::redirect(
     '/study/beth-perry-black-professional-nursing-concepts-challenges-9th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/test-bank-pharmacology-and-the-nursing-process-10th-edition', 
+    '/study/linda-lane-lilley-pharmacology-and-the-nursing-process-10th-edition-test-bank', 
+    301
+);
+
+
 
 // 2. Global Migration: Catch-all for all other products
 Route::get('/shop/{slug}', function ($slug) {
