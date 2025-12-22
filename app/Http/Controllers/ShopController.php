@@ -57,7 +57,7 @@ class ShopController extends Controller
         $cacheDuration_promo = 600; 
         $cacheKey_promo = 'product.promotion';
 
-        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(5)->get()->toArray());
+        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(10)->get()->toArray());
         
         // $cacheDuration_products = 600;
         // $cacheKey_products = 'product.promotion';
@@ -87,7 +87,7 @@ class ShopController extends Controller
         // The cache key
         $cacheKey_promo = 'product.promotion';
 
-        // $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(10)->get()->toArray());
+        $promotion = Cache::remember($cacheKey_promo, $cacheDuration_promo, fn()=>Product::where('prod_Percent_discount', '>', 0)->limit(10)->get()->toArray());
 
         $product = $this->checkInput($product);
        
@@ -144,7 +144,7 @@ class ShopController extends Controller
                 return view('shop.show', 
                 [
                     'data' => $data,
-                    // 'promotions' => $promotion,
+                    'promotions' => $promotion,
                     'pages' => 'Pages '.$no_pages,
                     'canonical_url' => $canonical_url,
                     'keywords' => explode( ",", $data['prod_keywords']),
@@ -156,7 +156,7 @@ class ShopController extends Controller
                 return view('shop.show', 
                 [
                     'data' => $data,
-                    // 'promotions' => $promotion,
+                    'promotions' => $promotion,
                     'pages' => '',
                     'canonical_url' => $canonical_url,
                     'keywords' => explode( ",", $data['prod_keywords']),

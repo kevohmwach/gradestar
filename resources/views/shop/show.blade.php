@@ -238,7 +238,7 @@
     </div>
 
     {{-- Pass the $promotions variable (which should be available in your view) --}}
-    {{-- <x-promotion-section :promotions="$promotions" /> --}}
+    <x-promotion-section :promotions="$promotions" />
 
     
 </div>

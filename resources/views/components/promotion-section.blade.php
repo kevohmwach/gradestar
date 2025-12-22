@@ -33,9 +33,9 @@
 
 
 
-
-<div class="promotion-content">
-        <p class="hot-deals">Grab limited Hot deals now </p>
+<aside data-nosnippet >
+    <div class="promotion-content">
+        <h4 class="hot-deals">Grab limited Hot deals now </h4>
         @if (!empty($promotions))
             @foreach($promotions as $promotion)
                 <div class="promotion-column">
@@ -136,3 +136,4 @@
         @endif
 
     </div>
+</aside>
