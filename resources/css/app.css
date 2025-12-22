@@ -307,7 +307,8 @@ footer a {
     text-decoration: none;
 }
 .hot-deals{
-    color:rgb(238, 96, 96);
+    /* color:rgb(238, 96, 96); */
+    color:rgb(158, 26, 26);
     font-style: italic;
     font-weight: bold;
 }
