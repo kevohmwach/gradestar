@@ -126,7 +126,7 @@
         </div>
         <div class="preview_alert">
             <div>
-                <p class="seo_h2" >You are viewing a  preview pdf for <strong>{{$data['prod_title']}}</strong>.
+                <p class="seo_h2" >You are viewing a  preview pdf for <strong>{{$keywords[0]}}</strong>.
                 <span class="instant_downlink_link" >An instant downlink link</span> to the <strong> complete test bank</strong> will be sent via email immediately after purchase.</p>
             </div>
                     

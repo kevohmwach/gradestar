@@ -24,6 +24,23 @@ use App\Http\Controllers\MailsendController;
 
 Auth::routes();
 
+// SEO Redirect: Old URL to New Author-Optimized URL
+Route::redirect(
+
+    '/shop/professional-nursing-concepts-challenges-9th-edition-test-bank', 
+    '/shop/beth-perry-black-professional-nursing-concepts-challenges-9th-edition-test-bank', 
+    301
+);
+
+// Route::redirect(
+
+//     '/shop/maternal-child-nursing-care-7th-edition-by-shannon-e-perry-marilyn-j-hockenberry-mary-catherine-cashion-4', 
+//     '/shop/beth-perry-black-professional-nursing-concepts-challenges-9th-edition-test-bank', 
+//     301
+// );
+
+
+
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homeprofile');
 //Temporal route
 // Route::get('/home', [App\Http\Controllers\ShopController::class, 'index'])->name('home');

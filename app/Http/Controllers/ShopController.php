@@ -81,6 +81,36 @@ class ShopController extends Controller
     }
 
     public function show($product){
+//         <script type="application/ld+json">
+// {
+//   "@context": "https://schema.org/",
+//   "@type": "Product",
+//   "name": "Professional Nursing Concepts & Challenges 9th Edition Test Bank",
+//   "image": [
+//     "https://www.gradestarsolutions.com/storage/images/professional-nursing-9th-ed.jpg"
+//   ],
+//   "description": "Get the official Test Bank for Professional Nursing Concepts & Challenges, 9th Edition by Beth Perry Black. Includes NCLEX-style questions, rationales, and instant PDF download.",
+//   "sku": "PNCC-9EB-TB",
+//   "brand": {
+//     "@type": "Brand",
+//     "name": "Beth Perry Black"
+//   },
+//   "offers": {
+//     "@type": "Offer",
+//     "url": "https://www.gradestarsolutions.com/shop/professional-nursing-concepts-challenges-9th-edition-test-bank",
+//     "priceCurrency": "USD",
+//     "price": "17.99",
+//     "availability": "https://schema.org/InStock",
+//     "itemCondition": "https://schema.org/NewCondition"
+//   },
+//   "aggregateRating": {
+//     "@type": "AggregateRating",
+//     "ratingValue": "4.9",
+//     "reviewCount": "12"
+//   }
+// }
+// </script>
+
         // Define how long to cache (in seconds). 600 seconds = 10 minutes.
         $cacheDuration_promo = 600; 
 
