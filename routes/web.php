@@ -26,11 +26,16 @@ Auth::routes();
 
 // SEO Redirect: Old URL to New Author-Optimized URL
 Route::redirect(
-
     '/shop/professional-nursing-concepts-challenges-9th-edition-test-bank', 
-    '/shop/beth-perry-black-professional-nursing-concepts-challenges-9th-edition-test-bank', 
+    '/study/beth-perry-black-professional-nursing-concepts-challenges-9th-edition-test-bank', 
     301
 );
+
+// 2. Global Migration: Catch-all for all other products
+Route::get('/shop/{slug}', function ($slug) {
+    return redirect()->to('/study/' . $slug, 301);
+})->where('slug', '.*');
+
 
 // Route::redirect(
 
@@ -46,7 +51,7 @@ Route::redirect(
 // Route::get('/home', [App\Http\Controllers\ShopController::class, 'index'])->name('home');
 
 Route::get('/', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
-Route::get('/shop/{product}', [App\Http\Controllers\ShopController::class, 'show']);
+Route::get('/study/{product}', [App\Http\Controllers\ShopController::class, 'show'])->name('showpage');
 Route::get('/preview/{product}', [App\Http\Controllers\ShopController::class, 'preview']);
 Route::get('/addcart/{id}', [App\Http\Controllers\ShopController::class, 'addcart']);
 Route::get('/removecart/{id}', [App\Http\Controllers\ShopController::class, 'removecart']);

@@ -24,7 +24,8 @@
         <div class="index-row">
             @foreach($products as $product)
             <div class="column">
-                <a href="{{url('/shop', $product->slug)}}" >
+                {{-- <a href="{{url('/shop', $product->slug)}}" > --}}
+                <a href="{{route('showpage',['product'=>$product->slug])}}" >
                 <div class="bk-image">
                     {{-- <img src="storage/{{$product->prod_image}}" alt="{{$product->prod_title}}"> --}}
                     {{-- @php

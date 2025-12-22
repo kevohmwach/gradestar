@@ -1,45 +1,11 @@
-{{-- <div class="promotion-content">
-    <p class="hot-deals">Grab limited Hot deals now </p>
-
-    @if (!empty($promotions))
-        @foreach($promotions as $promotion)
-            <div class="promotion-column">
-                <a href="{{ url('/shop', $promotion['slug']) }}"> --}}
-                    
-                    {{-- USE THE PREVIOUSLY CREATED IMAGE COMPONENT --}}
-                    {{-- <x-product-image :promotion="$promotion" />
-                    
-                    <div class="bk-title">
-                        <p>{{ $promotion['prod_title'] }}</p>
-                    </div>
-                </a>
-
-                <div class="bk-price">
-                    <div class="discount">
-                        <p class="actual-price actual-price-discounted"> --}}
-                            {{-- Price display logic --}}
-                            {{-- <s>${{ $promotion['prod_actualPrice'] }}</s>
-                        </p>
-                        <p class="discounted-price"> --}}
-                            {{-- Discount calculation logic --}}
-                            {{-- ${{ round($promotion['prod_actualPrice'] * (1 - ($promotion['prod_Percent_discount'] * 0.01)), 2) }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    @endif
-</div> --}}
-
-
-
 <aside data-nosnippet class="promotion-content" >
     {{-- <div class="promotion-content"> --}}
         <p class="hot-deals">Grab limited Hot deals now! </p>
         @if (!empty($promotions))
             @foreach($promotions as $promotion)
                 <div class="promotion-column">
-                    <a href="{{url('/shop', $promotion['slug'])}}" >
+                    {{-- <a href="{{url('/shop', $promotion['slug'])}}" > --}}
+                    <a href="{{route('showpage',['product'=>$promotion['slug']])}}" >
                     <div class="bk-image bk-image-promo">
                         {{-- <img src="../storage/{{$promotion['prod_image']}}" alt="{{$promotion['prod_title']}}"> --}}
                         @php
