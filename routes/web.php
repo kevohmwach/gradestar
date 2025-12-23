@@ -65,6 +65,11 @@ Route::redirect(
     '/study/mccance-huether-pathophysiology-9th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/leddy-pepper-s-professional-nursing-10th-edition-test-bank', 
+    '/study/lucy-hood-leddy-peppers-professional-nursing-10th-edition-test-bank', 
+    301
+);
 
 
 
