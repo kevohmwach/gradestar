@@ -70,6 +70,11 @@ Route::redirect(
     '/study/lucy-hood-leddy-peppers-professional-nursing-10th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/interpersonal-relationships-professional-communication-skills-for-nurses-test-bank-9th-edition', 
+    '/study/kathleen-underman-boggs-interpersonal-relationships-9th-edition-test-bank', 
+    301
+);
 
 
 
