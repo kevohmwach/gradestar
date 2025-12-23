@@ -60,6 +60,11 @@ Route::redirect(
     '/study/murray-foundations-of-maternal-newborn-womens-health-nursing-7th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/test-bank-pathophysiology-9th-edition-mccance', 
+    '/study/mccance-huether-pathophysiology-9th-edition-test-bank', 
+    301
+);
 
 
 
