@@ -50,6 +50,11 @@ Route::redirect(
     '/study/mary-lou-sole-introduction-to-critical-care-nursing-8th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/test-bank-williams-basic-nutrition-and-diet-therapy-16th-edition', 
+    '/study/staci-nix-mcintosh-williams-basic-nutrition-and-diet-therapy-16th-edition-test-bank', 
+    301
+);
 
 
 
