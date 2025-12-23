@@ -35,6 +35,12 @@ Route::redirect(
     '/study/linda-lane-lilley-pharmacology-and-the-nursing-process-10th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/advanced-practice-nursing-in-the-care-of-older-adults-3rd-edition-test-bank', 
+    '/study/kennedy-malone-advanced-practice-nursing-in-the-care-of-older-adults-3rd-edition-test-bank', 
+    301
+);
+
 
 
 
