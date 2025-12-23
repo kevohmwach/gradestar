@@ -90,6 +90,11 @@ Route::redirect(
     '/study/vanmeter-goulds-pathophysiology-for-the-health-professions-7th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/test-bank-lewis-medical-surgical-12th-edition', 
+    '/study/harding-lewis-medical-surgical-nursing-12th-edition-test-bank', 
+    301
+);
 
 
 
