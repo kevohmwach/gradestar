@@ -55,6 +55,11 @@ Route::redirect(
     '/study/staci-nix-mcintosh-williams-basic-nutrition-and-diet-therapy-16th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/foundations-of-maternal-newborn-women-s-health-nursing-7th-edition-test-bank', 
+    '/study/murray-foundations-of-maternal-newborn-womens-health-nursing-7th-edition-test-bank', 
+    301
+);
 
 
 

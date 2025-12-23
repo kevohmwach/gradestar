@@ -62,9 +62,10 @@
                 
                 {{-- <div>
                     <ul class="other_titles">
-                        
+                        <li>Note: This is the Digital Test Bank (Questions & Answers), not the physical textbook.</li>
                     </ul>
                 </div> --}}
+                
 
                 <div class="bk-cart">
                     <br>
@@ -83,6 +84,11 @@
                             Add to cart
                         </a> 
                     </button>
+                </div>
+                <div>
+                    <ul class="other_titles">
+                        <li><strong>Note:</strong>This is the Digital Test Bank (Questions & Answers), not the physical textbook.</li>
+                    </ul>
                 </div>
                 
                 
