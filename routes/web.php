@@ -75,6 +75,12 @@ Route::redirect(
     '/study/kathleen-underman-boggs-interpersonal-relationships-9th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/test-bank-understanding-pharmacology-essentials-for-medication-safety', 
+    '/study/lilley-understanding-pharmacology-essentials-for-medication-safety-3rd-edition-test-bank', 
+    301
+);
+
 
 
 
