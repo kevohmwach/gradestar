@@ -85,6 +85,12 @@ Route::redirect(
     '/study/lehnes-pharmacology-for-nursing-care-11th-edition-burchum-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/test-bank-for-gould-s-pathophysiology-7th-edition', 
+    '/study/vanmeter-goulds-pathophysiology-for-the-health-professions-7th-edition-test-bank', 
+    301
+);
+
 
 
 
