@@ -40,6 +40,11 @@ Route::redirect(
     '/study/kennedy-malone-advanced-practice-nursing-in-the-care-of-older-adults-3rd-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/test-bank-leading-and-managing-in-nursing-7th-edition', 
+    '/study/yoder-wise-leading-and-managing-in-nursing-7th-edition-test-bank', 
+    301
+);
 
 
 
