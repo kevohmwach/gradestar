@@ -80,6 +80,11 @@ Route::redirect(
     '/study/lilley-understanding-pharmacology-essentials-for-medication-safety-3rd-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/test-bank-lehne-s-pharmacology-for-nursing-care-11th-edition', 
+    '/study/lehnes-pharmacology-for-nursing-care-11th-edition-burchum-test-bank', 
+    301
+);
 
 
 
