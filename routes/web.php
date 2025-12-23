@@ -45,6 +45,11 @@ Route::redirect(
     '/study/yoder-wise-leading-and-managing-in-nursing-7th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/introduction-to-critical-care-nursing-8th-edition-test-bank', 
+    '/study/mary-lou-sole-introduction-to-critical-care-nursing-8th-edition-test-bank', 
+    301
+);
 
 
 
