@@ -95,6 +95,11 @@ Route::redirect(
     '/study/harding-lewis-medical-surgical-nursing-12th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/paramedic-care-principles-and-practice-6th-edition', 
+    '/study/bledsoe-paramedic-care-principles-and-practice-6th-edition-test-bank', 
+    301
+);
 
 
 
