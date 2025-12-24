@@ -100,6 +100,11 @@ Route::redirect(
     '/study/bledsoe-paramedic-care-principles-and-practice-6th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/test-bank-abrams-clinical-drug-therapy-rationales-for-nursing-practice-13th-edition', 
+    '/study/frandsen-abrams-clinical-drug-therapy-13th-edition-test-bank', 
+    301
+);
 
 
 
