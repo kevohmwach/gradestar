@@ -125,6 +125,11 @@ Route::redirect(
     '/study/hockenberry-wongs-essentials-of-pediatric-nursing-11th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/maternal-child-health-nursing-care-of-the-childbearing-childrearing-family', 
+    '/study/silbert-flagg-maternal-child-health-nursing-9th-edition-test-bank', 
+    301
+);
 
 
 
