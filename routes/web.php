@@ -110,6 +110,11 @@ Route::redirect(
     '/study/nath-applied-pathophysiology-a-conceptual-approach-4th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/introduction-to-clinical-pharmacology-11th-edition', 
+    '/study/visovsky-introduction-to-clinical-pharmacology-11th-edition-test-bank', 
+    301
+);
 
 
 
