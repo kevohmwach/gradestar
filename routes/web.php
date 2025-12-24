@@ -120,6 +120,11 @@ Route::redirect(
     '/study/kyle-essentials-of-pediatric-nursing-4th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/wong-s-essentials-of-pediatric-nursing-11th-edition', 
+    '/study/hockenberry-wongs-essentials-of-pediatric-nursing-11th-edition-test-bank', 
+    301
+);
 
 
 
