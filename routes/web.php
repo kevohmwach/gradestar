@@ -115,6 +115,11 @@ Route::redirect(
     '/study/visovsky-introduction-to-clinical-pharmacology-11th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/essentials-of-pediatric-nursing-4th-edition', 
+    '/study/kyle-essentials-of-pediatric-nursing-4th-edition-test-bank', 
+    301
+);
 
 
 
