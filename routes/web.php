@@ -105,6 +105,11 @@ Route::redirect(
     '/study/frandsen-abrams-clinical-drug-therapy-13th-edition-test-bank', 
     301
 );
+Route::redirect(
+    '/shop/applied-pathophysiology-a-conceptual-approach-4th-edition-test-bank', 
+    '/study/nath-applied-pathophysiology-a-conceptual-approach-4th-edition-test-bank', 
+    301
+);
 
 
 
