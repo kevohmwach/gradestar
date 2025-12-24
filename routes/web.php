@@ -132,22 +132,10 @@ Route::redirect(
 );
 
 
-
-
-
-
 // 2. Global Migration: Catch-all for all other products
 Route::get('/shop/{slug}', function ($slug) {
     return redirect()->to('/study/' . $slug, 301);
 })->where('slug', '.*');
-
-
-// Route::redirect(
-
-//     '/shop/maternal-child-nursing-care-7th-edition-by-shannon-e-perry-marilyn-j-hockenberry-mary-catherine-cashion-4', 
-//     '/shop/beth-perry-black-professional-nursing-concepts-challenges-9th-edition-test-bank', 
-//     301
-// );
 
 
 
