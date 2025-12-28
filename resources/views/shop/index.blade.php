@@ -74,21 +74,23 @@
                                 'webp' => asset("storage/{$directory}{$filename}-300w.webp")
                             ],
                             // 600w is for larger contexts or high-DPI (2x) displays
-                            600 => [
-                                'original' => asset("storage/{$directory}{$filename}-600w.{$extension}"),
-                                'webp' => asset("storage/{$directory}{$filename}-600w.webp")
-                            ],
-                            // 900w is the original max size from your PHP script (1000px max width)
-                            900 => [
-                                'original' => asset("storage/{$directory}{$filename}.{$extension}"),
-                                'webp' => asset("storage/{$directory}{$filename}.webp")
-                            ],
+                            // 600 => [
+                            //     'original' => asset("storage/{$directory}{$filename}-600w.{$extension}"),
+                            //     'webp' => asset("storage/{$directory}{$filename}-600w.webp")
+                            // ],
+                            // // 900w is the original max size from your PHP script (1000px max width)
+                            // 900 => [
+                            //     'original' => asset("storage/{$directory}{$filename}.{$extension}"),
+                            //     'webp' => asset("storage/{$directory}{$filename}.webp")
+                            // ],
                         ];
 
                         // Build the srcset strings using the generated URLs and width descriptors (w)
                         $webpSrcset = collect($sizes)->map(function ($urls, $width) {
                             return "{$urls['webp']} {$width}w";
                         })->implode(', ');
+                        
+                        // $webpSrcset = 
 
                         $originalSrcset = collect($sizes)->map(function ($urls, $width) {
                             return "{$urls['original']} {$width}w";
@@ -96,12 +98,14 @@
 
                         // Fallback URL for img tag (must be the lowest-res image for best performance)
                         $fallbackUrl = $sizes[300]['original'];
+                        // $fallbackUrl = $sizes[300]['webp'];
                     @endphp
 
                     <picture>
                         <!-- 1. WebP Source: Allows the browser to pick the best size WebP file -->
                         <source
                             srcset="{{ $webpSrcset }}"
+                            {{-- sizes="400px" --}}
                             sizes="(max-width: 400px) 300px, 100vw"
                             type="image/webp"
                         >
@@ -109,6 +113,7 @@
                         <!-- 2. Original Format Source: Allows the browser to pick the best size JPG/PNG file -->
                         <source
                             srcset="{{ $originalSrcset }}"
+                            {{-- sizes="400px" --}}
                             sizes="(max-width: 400px) 300px, 100vw"
                         >
 
@@ -117,6 +122,9 @@
                             src="{{ $fallbackUrl }}"
                             alt="{{ $imageTitle }}"
                             class="webP-image"
+                            {{-- decoding="async"
+                            width="800" 
+                            height="600" --}}
                         >
                     </picture>
                 </div>

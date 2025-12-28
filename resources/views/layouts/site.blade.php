@@ -48,16 +48,20 @@
                                 // 1. Define the available responsive sizes (in pixels 'w') and their full URLs
                                 $sizes = [
                                     // Ideal for 1x displays at the 223px displayed width
-                                    300 => [
-                                        // 'webp' => asset("{$basePath}-300w.webp"),
-                                        'webp' => asset("{$basePath}.webp"),
-                                        'original' => asset("{$basePath}-300w.{$originalExtension}")
+                                    100 => [
+                                        'webp' => asset("{$basePath}-100w.webp"),
+                                        'original' => asset("{$basePath}-100w.{$originalExtension}")
                                     ],
+                                    // 300 => [
+                                    //     // 'webp' => asset("{$basePath}-300w.webp"),
+                                    //     'webp' => asset("{$basePath}-300w.webp"),
+                                    //     'original' => asset("{$basePath}-300w.{$originalExtension}")
+                                    // ],
                                     // Ideal for 2x displays or slightly larger contexts (611px original width is close to 600w)
-                                    600 => [
-                                        'webp' => asset("{$basePath}.webp"),
-                                        'original' => asset("{$basePath}.{$originalExtension}")
-                                    ],
+                                    // 600 => [
+                                    //     'webp' => asset("{$basePath}.webp"),
+                                    //     'original' => asset("{$basePath}.{$originalExtension}")
+                                    // ],
                                 ];
 
                                 // 2. Build the srcset strings for both formats
@@ -65,11 +69,12 @@
                                 $originalSrcset = collect($sizes)->map(fn($urls, $width) => "{$urls['original']} {$width}w")->implode(', ');
 
                                 // 3. Define the fallback src (the smallest image size is the most performant fallback)
-                                $fallbackUrl = $sizes[300]['original'];
+                                // $fallbackUrl = $sizes[300]['original'];
+                                $fallbackUrl = $sizes[100]['original'];
 
                                 // 4. Define the sizes attribute (tells the browser the displayed width of the image)
                                 // Since the image is small (223px displayed width), we tell the browser it occupies a max of 300px.
-                                $imageSizes = '300px'; 
+                                $imageSizes = '100px'; 
                             @endphp
 
                             <picture>

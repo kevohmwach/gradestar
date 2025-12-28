@@ -35,12 +35,13 @@ class OptimizeExistingImages extends Command
         $optimizerChain = OptimizerChainFactory::create();
         
         // Define the target widths for generating responsive image variants.
-        $targetWidths = [300, 400, 800, 1200]; 
+        // $targetWidths = [300, 400, 800, 1200]; 
+        $targetWidths = [100]; //for public images
         
         // Adjust path to specifically target public images (accessible via the 'storage/' symlink)
         //$baseDir = storage_path('app/public/images'); // Adjust path as needed
-        $baseDir = storage_path(); 
-        //$baseDir = public_path('assets/images');
+        // $baseDir = storage_path(); 
+        $baseDir = public_path('assets/images');
 
         if (!File::isDirectory($baseDir)) {
             $this->error("Image directory not found: {$baseDir}");
