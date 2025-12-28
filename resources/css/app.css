@@ -16,7 +16,8 @@ a {
     
 }
 .breadcrumbs{
-    color:rgb(13, 125, 13);
+    /* color:rgb(13, 125, 13); */
+    color: rgb(10, 110, 10);
     text-decoration: underline;
 }
 .edit_book{

@@ -18,6 +18,9 @@
 
 <div class="containerr">
     <div class="main-content">
+        {{-- <div class="Navigation_seo" >
+            <p><a class="link_tag breadcrumbs" href="{{route('shop')}}">Home</a> / {{$keywords[0]}}</p>
+        </div> --}}
         <div class="show_content">
             <div class="product_preview">
                 <iframe 
