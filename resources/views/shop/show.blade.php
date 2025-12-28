@@ -89,8 +89,11 @@
                     </button>
                 </div>
                 <div>
+                    {{-- <h2 class="seo_h2">Main Features: </h2> --}}
+                    <p> Main Features: </p>
                     <ul class="other_titles">
-                        <li><strong>Note:</strong>This is the Digital Test Bank (Questions & Answers), not the physical textbook.</li>
+                        <li><strong>All chapters covered</strong></li>
+                        <li><strong>This is a Digital Test Bank (Questions & Answers), NOT the physical textbook.</strong></li>
                     </ul>
                 </div>
                 
@@ -135,8 +138,8 @@
         </div>
         <div class="preview_alert">
             <div>
-                <p class="seo_h2" >You are viewing a  preview pdf: <strong>{{$keywords[0]}}</strong>.
-                <span class="instant_downlink_link" >An instant downlink link</span> to the <strong> Verified test bank</strong> will be sent via email immediately after purchase.</p>
+                <p class="seo_h2" >This is a preview <strong>PDF</strong>: <strong>{{$keywords[0]}}</strong>.
+                <span class="instant_downlink_link" ><strong>An instant download link</strong></span> to the <strong> Verified test bank</strong> will be sent via email immediately after purchase.</p>
             </div>
                     
 

@@ -399,6 +399,7 @@ footer a {
 }
 .other_titles{
    padding-left: 0px;
+   list-style: square;
 }
 .preview_file{
     width: 100%;
