@@ -135,15 +135,15 @@
         </div>
         <div class="preview_alert">
             <div>
-                <p class="seo_h2" >You are viewing a  preview pdf for <strong>{{$keywords[0]}}</strong>.
-                <span class="instant_downlink_link" >An instant downlink link</span> to the <strong> complete test bank</strong> will be sent via email immediately after purchase.</p>
+                <p class="seo_h2" >You are viewing a  preview pdf: <strong>{{$keywords[0]}}</strong>.
+                <span class="instant_downlink_link" >An instant downlink link</span> to the <strong> Verified test bank</strong> will be sent via email immediately after purchase.</p>
             </div>
                     
 
         </div>
 
         <div class="seo-optimizer">
-            <div class="seo-optimizer-1">
+            {{-- <div class="seo-optimizer-1">
                 <div class="optimizer-heading">
                     @isset($data['prod_overview1_h2'])
                         <h2>{{ $data['prod_overview1_h2'] }}</h2>
@@ -154,7 +154,7 @@
                         {!! htmlspecialchars_decode($data['prod_overview1_descriprion']) !!}
                     @endisset
                 </div>
-            </div>
+            </div> --}}
 
             {{-- <div class="seo-optimizer-2">
                 <div class="optimizer-heading">
