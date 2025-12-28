@@ -240,13 +240,11 @@
 
         </div>
         
-        <div class="product_content">
-            {{-- <div class="sample_content_heading">
-               
-            </div> --}}
+        {{-- <div class="product_content">
+            
             {!! htmlspecialchars_decode($data['prod_extraContent']) !!}
           
-        </div>
+        </div> --}}
     </div>
 
     {{-- Pass the $promotions variable (which should be available in your view) --}}
