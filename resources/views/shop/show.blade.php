@@ -146,7 +146,7 @@
         </div>
 
         <div class="seo-optimizer">
-            {{-- <div class="seo-optimizer-1">
+            <div class="seo-optimizer-1">
                 <div class="optimizer-heading">
                     @isset($data['prod_overview1_h2'])
                         <h2>{{ $data['prod_overview1_h2'] }}</h2>
@@ -157,7 +157,7 @@
                         {!! htmlspecialchars_decode($data['prod_overview1_descriprion']) !!}
                     @endisset
                 </div>
-            </div> --}}
+            </div>
 
             {{-- <div class="seo-optimizer-2">
                 <div class="optimizer-heading">
