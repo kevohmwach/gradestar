@@ -40,7 +40,7 @@ class OptimizeExistingImages extends Command
         
         // Adjust path to specifically target public images (accessible via the 'storage/' symlink)
         //$baseDir = storage_path('app/public/images'); // Adjust path as needed
-        
+
          $baseDir = storage_path(); 
         //$baseDir = public_path('assets/images');
 
@@ -93,7 +93,7 @@ class OptimizeExistingImages extends Command
                 // --- ITERATE THROUGH TARGET WIDTHS TO CREATE VARIANTS ---
                 foreach ($widthsToGenerate as $width) {
                     // Only generate versions smaller than or equal to the original image width
-                    if ($originalImg->width() >= $width) {
+                    // if ($originalImg->width() >= $width) {
 
                         // 1. Define the paths for the new variant files (e.g., product-400w.jpg)
                         $variantBasename = "{$basename}-{$width}w";
@@ -133,7 +133,10 @@ class OptimizeExistingImages extends Command
 
                         $this->line("      > Saved {$width}w variant (Original Format): " . round($finalSize / 1024, 2) . " KB");
                         $this->line("      > Saved {$width}w variant (WebP Format): " . round($webpSize / 1024, 2) . " KB");
-                    }
+                    // }
+                    // else{
+                    //     $this->comment("Failed: File Original width smaller");
+                    // }
                 }
                 
                 // Original file deletion step removed as requested.
