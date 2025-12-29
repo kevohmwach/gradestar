@@ -91,8 +91,10 @@
                                     srcset="{{ $originalSrcset }}"
                                     sizes="{{ $imageSizes }}"
                                     alt="Logo"
-                                    fetchpriority="high"   {{-- Performance optimization for LCP --}}
+                                    decoding="async"
+                                    {{-- fetchpriority="high"   Performance optimization for LCP --}}
                                     class="webP-image-logo"
+                                    loading="lazy"
                                 >
                             </picture>
                             
