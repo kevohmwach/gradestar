@@ -250,6 +250,8 @@
                 <div class="footer-headings">Useful Links</div>
                 <ul>
                     <li><a class="link_tag" href={{route('about')}}> About us</a></li>
+                    <li><a class="link_tag" href={{route('returnPolicy')}}> Return & Refund Policy</a></li>
+                    <li><a class="link_tag" href={{route('termsOfUse')}}> Terms of Use</a></li>
                     {{-- <li><a href=#>Contact us</a></li> --}}
                 </ul>
             </div>

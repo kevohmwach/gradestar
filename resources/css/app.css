@@ -645,9 +645,10 @@ footer a {
 .about-h1{
     font-size: 30px;
 }
-.about-h2{
+.refund-h2, .terms-h2, .about-h2{
     font-size: 20px;
     padding-top: 50px;
+    font-weight: bold;
 }
 
 /* -----------------------Search--------------------- */

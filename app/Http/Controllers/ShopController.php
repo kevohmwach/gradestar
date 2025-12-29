@@ -363,6 +363,16 @@ class ShopController extends Controller
             'canonical_url' => url()->current(),
         ]);
     }
+     public function return(){
+        return view('shop.return',[
+            'canonical_url' => url()->current(),
+        ]);
+    }
+     public function terms(){
+        return view('shop.terms',[
+            'canonical_url' => url()->current(),
+        ]);
+    }
 
     public function paginate($items, $perPage = 12, $page = null, $options = [])
 

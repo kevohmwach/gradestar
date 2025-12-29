@@ -150,6 +150,8 @@ Route::get('/addcart/{id}', [App\Http\Controllers\ShopController::class, 'addcar
 Route::get('/removecart/{id}', [App\Http\Controllers\ShopController::class, 'removecart']);
 Route::get('/cart', [App\Http\Controllers\ShopController::class, 'cart'])->name('cart');
 Route::get('/about', [App\Http\Controllers\ShopController::class, 'about'])->name('about');
+Route::get('/return', [App\Http\Controllers\ShopController::class, 'return'])->name('returnPolicy');
+Route::get('/terms', [App\Http\Controllers\ShopController::class, 'terms'])->name('termsOfUse');
 Route::get('products/search', [App\Http\Controllers\ShopController::class, 'search'])->name('Booksearch');
 Route::get('/search/{book}', [App\Http\Controllers\ShopController::class, 'search'])->name('search');
 
