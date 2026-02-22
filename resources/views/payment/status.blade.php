@@ -12,7 +12,7 @@
                 <div class="pay-success">
                     <div class="payment-success">Payment has been received successfully</div>
                     <p>Your document is ready for download.
-                        Click on the link below to download
+                        Click on the link below (Sent yo your email as well) to View the testbank
                     </p>
                     {{-- {{dd($purchaseLists)}} --}}
                     @foreach($purchaseLists as $purchaseList)
@@ -30,14 +30,12 @@
                                 {{-- Download --}}
                             {{-- </button> --}}
                         </a>
-                        @if(Auth::user()!==null && Auth::user()->priveledge > 2 )
+                        {{-- @if(Auth::user()!==null && Auth::user()->priveledge > 2 ) --}}
                         <br><br><br>
                         <p>
                             <a href="{{ route('auto_download', [
                                 'orderRef' => session()->get('orderId'),
                                 'id' => $purchaseList['id'],
-                                //'slug' => $purchaseList['title'],
-                                //'slug' => 'fhghggh uuyu uyuy',
                                 'slug' => Str::slug($purchaseList['title']),
                                 //'slug' => Str::limit(Str::slug($purchaseList['title']), 50, ''),
 
@@ -45,12 +43,7 @@
                                 Download Testbank (PDF)
                             </a>
                         </p>
-                        <p>
-                            <a href="{{ asset('storage/uploads/docs/Csj3X29i9kG7zYfoEILPU4vo1MtMmWCyNMidfjEi.pdf') }}" download>
-                                Download PDF
-                            </a>
-                        </p>
-                        @endif
+                        {{-- @endif --}}
                     </div>
                     @endforeach
                 </div>
