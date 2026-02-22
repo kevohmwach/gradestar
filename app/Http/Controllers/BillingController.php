@@ -106,7 +106,7 @@ class BillingController extends Controller
                     'bill_prodid' => $item['id'],
                     'bill_authorid' => $item['user_id'],
                     'bill_status' => 0,
-                    'downloadlink' => '/file/download/'.$orderId.'/'.$item['id'].'/'.$item['prod_title'],
+                    'downloadlink' => '/file/download/'.$orderId.'/'.$item['id'].'/'.Str::slug($item['prod_title']),
                     'downloadlink_status' => 0,
                     'downloadlink_views' => 0,
                 ]);

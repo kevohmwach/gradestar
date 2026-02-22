@@ -213,7 +213,7 @@ class PaymentController extends Controller
         ->send(new Newpurchase($subject, $urls, $name));
 
         //Alert Admin of a new sale
-        mail::to("kevohmwach@gmail.com")
+        mail::to("mwaurakelvinn@gmail.com")
         ->send(new Newpurchase("Document Sold: ".session()->get('orderId'), $urls, "Kelvin"));
 
     }
