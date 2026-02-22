@@ -68,7 +68,7 @@ class FileController extends Controller
         while (ob_get_level()) {
             ob_end_clean();
         }
-        $filename = Str::slug($slug);
+        $filename = Str::slug($slug).".pdf";
         // return Storage::disk('public')->download($filePath, "test.pdf", [
         //     'Content-Disposition' => 'attachment', 
         // ]);
