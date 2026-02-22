@@ -38,8 +38,8 @@
                                 'id' => $purchaseList['id'],
                                 //'slug' => $purchaseList['title'],
                                 //'slug' => 'fhghggh uuyu uyuy',
-                                //'slug' => Str::slug($purchaseList['title']),
-                                'slug' => Str::limit(Str::slug($purchaseList['title']), 50, ''),
+                                'slug' => Str::slug($purchaseList['title']),
+                                //'slug' => Str::limit(Str::slug($purchaseList['title']), 50, ''),
 
                             ]) }}" target="_blank" class="btn btn-primary">
                                 Download Testbank (PDF)
