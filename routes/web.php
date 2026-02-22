@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\BillingController;
@@ -172,7 +171,9 @@ Route::get('/payment/success', [PaymentController::class, 'success'])->name('suc
 Route::get('/payment/fail', [PaymentController::class, 'fail'])->name('fail');
 Route::get('/payment/status', [PaymentController::class, 'status'])->name('status');
 
-Route::get('/file/download/{orderRef}/{id}/{slug}', [FileController::class, 'download'])->name('download');
+Route::get('/file/download/{orderRef}/{id}/{slug}', [FileController::class, 'download'])->name('download')->where('slug', '.*'); // This allows dots in the slug!;
+Route::get('/file/auto_download/{orderRef}/{id}/{slug}', [FileController::class, 'auto_download'])->name('auto_download');
+//Route::get('/file/auto_download/{orderRef}/{id}', [FileController::class, 'auto_download'])->name('auto_download');
 Route::get('/sendmail/newpurchase',[MailsendController::class,'newpurchase'])->name('mail_newpurchase');
 
 Route::get('/transactions', [App\Http\Controllers\BillingController::class, 'transactions'])->name('transactions');

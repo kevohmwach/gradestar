@@ -21,7 +21,8 @@
                         <a href="{{route('download', [
                             'orderRef' => session()->get('orderId'),
                             'id' => $purchaseList['id'],
-                            'slug' => $purchaseList['title'],
+                            //'slug' => $purchaseList['title'],
+                            'slug' => Str::slug($purchaseList['title']),
 
                         ])}}" target="_blank" class="download-link" >
                             {{$purchaseList['title']}}
@@ -29,6 +30,27 @@
                                 {{-- Download --}}
                             {{-- </button> --}}
                         </a>
+                        @if(Auth::user()->priveledge > 2 )
+                            <br><br><br>
+                            <p>
+                                <a href="{{ route('auto_download', [
+                                    'orderRef' => session()->get('orderId'),
+                                    'id' => $purchaseList['id'],
+                                    //'slug' => $purchaseList['title'],
+                                    //'slug' => 'fhghggh uuyu uyuy',
+                                    //'slug' => Str::slug($purchaseList['title']),
+                                    'slug' => Str::limit(Str::slug($purchaseList['title']), 50, ''),
+
+                                ]) }}" target="_blank" class="btn btn-primary">
+                                    Download Testbank (PDF)
+                                </a>
+                            </p>
+                            <p>
+                                <a href="{{ asset('storage/uploads/docs/Csj3X29i9kG7zYfoEILPU4vo1MtMmWCyNMidfjEi.pdf') }}" download>
+                                    Download PDF
+                                </a>
+                            </p>
+                        @endif
                     </div>
                     @endforeach
                 </div>
@@ -97,7 +119,4 @@
         </div>
     </div>
 @endif
-
-
-
 @endsection
