@@ -6,6 +6,7 @@ use App\Models\Product;
 use File;
 use Response;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 class FileController extends Controller
 {
     public function checkInput($data) {
@@ -67,10 +68,11 @@ class FileController extends Controller
         while (ob_get_level()) {
             ob_end_clean();
         }
+        $filename = Str::slug($slug);
         // return Storage::disk('public')->download($filePath, "test.pdf", [
         //     'Content-Disposition' => 'attachment', 
         // ]);
-        return Storage::disk('public')->download($filePath, "test.pdf");
+        return Storage::disk('public')->download($filePath, $filename);
     }
     // public function downloadFile($filePath, $complete_path, $slug)
     // {
